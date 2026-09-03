@@ -79,7 +79,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Fundo Atmosférico Cinematográfico com Camada Não-Distrativa */
+/* Fundo Atmosférico Tecnológico & Cyber-Dark */
 .ambient-background {
   position: fixed;
   inset: 0;
@@ -95,8 +95,8 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.09;
-  filter: blur(12px) grayscale(40%);
+  opacity: 0.12;
+  filter: blur(14px) contrast(120%);
   transform: scale(1.05);
 }
 
@@ -104,20 +104,23 @@ body {
   position: absolute;
   inset: 0;
   background: 
-    radial-gradient(circle at 15% 15%, rgba(0, 240, 255, 0.12) 0%, transparent 45%),
-    radial-gradient(circle at 85% 25%, rgba(224, 0, 255, 0.14) 0%, transparent 50%),
-    radial-gradient(circle at 50% 65%, rgba(41, 121, 255, 0.1) 0%, transparent 55%),
-    linear-gradient(180deg, rgba(6, 7, 10, 0.85) 0%, rgba(6, 7, 10, 0.95) 40%, #06070a 100%);
+    radial-gradient(circle at 10% 20%, rgba(0, 240, 255, 0.14) 0%, transparent 45%),
+    radial-gradient(circle at 90% 15%, rgba(224, 0, 255, 0.16) 0%, transparent 48%),
+    radial-gradient(circle at 50% 50%, rgba(41, 121, 255, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 80% 85%, rgba(0, 240, 255, 0.1) 0%, transparent 50%),
+    linear-gradient(180deg, rgba(5, 6, 8, 0.82) 0%, rgba(5, 6, 8, 0.94) 35%, #050608 100%);
 }
 
-/* Grid decorativo ultra sutil */
+/* Malha Tecnológica Cibernética */
 .ambient-grid {
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 60px 60px;
-  mask-image: radial-gradient(circle at 50% 50%, black 30%, transparent 80%);
+  background-image: 
+    linear-gradient(rgba(0, 240, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(224, 0, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(circle at 50% 40%, black 40%, transparent 85%);
+  -webkit-mask-image: radial-gradient(circle at 50% 40%, black 40%, transparent 85%);
 }
 
 /* Tipografia e Helpers */
@@ -221,10 +224,17 @@ h1, h2, h3, h4, .brand-font {
 
 .nav-logo img {
   height: 44px;
-  width: auto;
+  width: 44px;
   border-radius: 50%;
-  box-shadow: 0 0 16px rgba(0, 240, 255, 0.4);
-  transition: var(--transition);
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-magenta)) border-box;
+  box-shadow: 0 0 18px rgba(0, 240, 255, 0.45);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.nav-logo:hover img {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.7), 0 0 40px rgba(224, 0, 255, 0.5);
 }
 
 .nav-logo-text {
@@ -419,19 +429,57 @@ h1, h2, h3, h4, .brand-font {
   color: var(--neon-cyan);
 }
 
-.hero-logo-img {
+/* Hero Logo Fluida & Integrada (Sem bordas duras / Sem marca d'água) */
+.hero-brand-fluid-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  max-width: 440px;
-  height: auto;
-  border-radius: var(--radius-lg);
-  box-shadow: 0 0 60px rgba(0, 240, 255, 0.25), 0 0 100px rgba(224, 0, 255, 0.2);
-  margin-bottom: 1.5rem;
-  transition: var(--transition);
+  max-width: 460px;
+  margin: 0 auto 1.5rem;
 }
 
-.hero-logo-img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 80px rgba(0, 240, 255, 0.4), 0 0 120px rgba(224, 0, 255, 0.35);
+.hero-brand-glow {
+  position: absolute;
+  inset: -15% -20%;
+  background: radial-gradient(ellipse at 50% 50%, rgba(0, 240, 255, 0.38) 0%, rgba(224, 0, 255, 0.28) 45%, transparent 72%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 1;
+  animation: pulse-brand-glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-brand-glow {
+  0% { transform: scale(0.95); opacity: 0.65; }
+  100% { transform: scale(1.08); opacity: 1; }
+}
+
+.hero-fluid-logo-frame {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-fluid-logo-img {
+  width: 100%;
+  height: 128%;
+  object-fit: cover;
+  object-position: center 88%;
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 0 25px rgba(0, 240, 255, 0.5)) drop-shadow(0 0 45px rgba(224, 0, 255, 0.35));
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+}
+
+.hero-fluid-logo-frame:hover .hero-fluid-logo-img {
+  transform: scale(1.04);
+  filter: drop-shadow(0 0 35px rgba(0, 240, 255, 0.75)) drop-shadow(0 0 65px rgba(224, 0, 255, 0.55));
 }
 
 .hero-title {
@@ -510,6 +558,114 @@ h1, h2, h3, h4, .brand-font {
 
 .trust-item.whatsapp svg {
   color: var(--whatsapp-green);
+}
+
+/* Faixa de Opções Tecnológicas no Hero */
+.hero-options-ribbon {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.75rem 0 0.5rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+.hero-option-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.55rem 1.15rem;
+  background: rgba(14, 18, 28, 0.75);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  backdrop-filter: blur(12px);
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.hero-option-chip svg {
+  color: var(--neon-cyan);
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.hero-option-chip:hover {
+  color: #fff;
+  border-color: var(--neon-cyan);
+  background: rgba(0, 240, 255, 0.14);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 240, 255, 0.35);
+}
+
+.hero-option-chip:hover svg {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 8px var(--neon-cyan));
+}
+
+.hero-option-chip.magenta {
+  border-color: rgba(224, 0, 255, 0.3);
+  background: rgba(224, 0, 255, 0.08);
+}
+
+.hero-option-chip.magenta svg {
+  color: var(--neon-magenta);
+}
+
+.hero-option-chip.magenta:hover {
+  border-color: var(--neon-magenta);
+  background: rgba(224, 0, 255, 0.18);
+  box-shadow: 0 6px 20px rgba(224, 0, 255, 0.35);
+}
+
+/* Métricas Tecnológicas do Hero */
+.hero-tech-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 860px;
+  margin-top: 2rem;
+}
+
+.tech-stat-card {
+  background: linear-gradient(180deg, rgba(16, 22, 35, 0.75) 0%, rgba(9, 12, 20, 0.88) 100%);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: 1.2rem 1rem;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  transition: var(--transition);
+}
+
+.tech-stat-card:hover {
+  border-color: var(--border-neon-cyan);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 240, 255, 0.2);
+}
+
+.tech-stat-value {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 900;
+  line-height: 1.1;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.3rem;
+}
+
+.tech-stat-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 /* ==========================================================================
@@ -901,122 +1057,402 @@ h1, h2, h3, h4, .brand-font {
 /* ==========================================================================
    TABELA DE PREÇOS / PLANOS
    ========================================================================== */
+/* ==========================================================================
+   PLANO ÚNICO EXCLUSIVO: O PLANO IDEAL PARA VOCÊ
+   ========================================================================== */
 .pricing-section {
   position: relative;
-  padding: 5rem 0;
+  padding: 5.5rem 0;
 }
 
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-  gap: 2rem;
-  align-items: stretch;
-  max-width: 1050px;
+.single-plan-wrapper {
+  max-width: 840px;
   margin: 0 auto;
+  position: relative;
 }
 
-.pricing-card {
-  background: var(--gradient-card);
-  border: 1px solid var(--border-glass);
+.single-plan-card {
+  background: linear-gradient(180deg, rgba(18, 25, 42, 0.95) 0%, rgba(8, 11, 18, 0.98) 100%);
+  border: 2px solid transparent;
+  background-clip: padding-box;
   border-radius: var(--radius-lg);
-  padding: 2.5rem 2rem;
-  display: flex;
-  flex-direction: column;
+  padding: 3.5rem 3rem;
   position: relative;
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.8), 0 0 50px rgba(0, 240, 255, 0.22);
   transition: var(--transition);
 }
 
-.pricing-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-card);
-}
-
-/* Card Destaque (Plano R$ 35 Mensal) */
-.pricing-card.featured {
-  background: linear-gradient(180deg, rgba(20, 28, 46, 0.9) 0%, rgba(10, 14, 24, 0.95) 100%);
-  border: 2px solid var(--neon-cyan);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 40px rgba(0, 240, 255, 0.25);
-  transform: scale(1.03);
-}
-
-.pricing-card.featured:hover {
-  transform: scale(1.04) translateY(-4px);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 50px rgba(0, 240, 255, 0.35);
-}
-
-.pricing-badge {
+.single-plan-card::before {
+  content: '';
   position: absolute;
-  top: -14px;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--neon-cyan) 0%, #2979ff 50%, var(--neon-magenta) 100%);
+  z-index: -1;
+  opacity: 0.85;
+  transition: var(--transition);
+}
+
+.single-plan-card:hover::before {
+  opacity: 1;
+  box-shadow: 0 0 45px rgba(0, 240, 255, 0.45), 0 0 65px rgba(224, 0, 255, 0.35);
+}
+
+.single-plan-badge {
+  position: absolute;
+  top: -16px;
   left: 50%;
   transform: translateX(-50%);
   background: var(--gradient-brand);
-  color: #000;
+  color: #050608;
   font-family: var(--font-heading);
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  padding: 0.35rem 1.2rem;
+  padding: 0.5rem 1.8rem;
   border-radius: var(--radius-full);
-  box-shadow: 0 4px 15px rgba(0, 240, 255, 0.4);
+  box-shadow: 0 6px 25px rgba(0, 240, 255, 0.5);
   white-space: nowrap;
 }
 
-.plan-name {
-  font-size: 1.45rem;
-  font-weight: 800;
+.plan-header-center {
+  text-align: center;
+  margin-bottom: 2.2rem;
+}
+
+.single-plan-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 900;
   text-transform: uppercase;
-  margin-bottom: 0.35rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.5rem;
 }
 
-.plan-desc {
+.single-plan-subtitle {
   color: var(--text-secondary);
-  font-size: 0.88rem;
-  margin-bottom: 1.8rem;
+  font-size: 1rem;
 }
 
-.plan-price-box {
+.single-price-box {
   display: flex;
   align-items: baseline;
-  gap: 0.3rem;
-  margin-bottom: 2rem;
-  padding-bottom: 1.8rem;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 1.5rem 0 2rem;
+  padding-bottom: 2rem;
   border-bottom: 1px solid var(--border-glass);
 }
 
-.currency {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--text-secondary);
+.single-currency {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--neon-cyan);
 }
 
-.price-value {
-  font-size: 3.4rem;
+.single-price-value {
+  font-size: clamp(3.8rem, 7vw, 5.2rem);
   font-weight: 900;
   font-family: var(--font-heading);
   line-height: 1;
-  color: #fff;
-}
-
-.pricing-card.featured .price-value {
   background: var(--gradient-brand);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.price-period {
+.single-price-period {
   color: var(--text-muted);
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-size: 1.15rem;
+  font-weight: 700;
 }
 
-.plan-features-list {
-  list-style: none;
+/* Grade de Benefícios em 2 Colunas */
+.plan-features-2col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.1rem 2rem;
+  margin-bottom: 2.75rem;
+}
+
+.plan-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.plan-feature-item svg {
+  color: var(--whatsapp-green);
+  flex-shrink: 0;
+}
+
+.plan-feature-item.highlight {
+  color: #fff;
+  font-weight: 700;
+}
+
+.plan-feature-item.highlight svg {
+  color: var(--neon-cyan);
+  filter: drop-shadow(0 0 6px var(--neon-cyan));
+}
+
+.single-plan-cta-box {
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
-  margin-bottom: 2.2rem;
-  flex-grow: 1;
+  align-items: center;
+  gap: 1rem;
+}
+
+.single-plan-cta-box .btn-primary-whatsapp {
+  width: 100%;
+  max-width: 580px;
+  font-size: 1.15rem;
+  padding: 1.15rem 2rem;
+}
+
+.plan-sub-guarantee {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.plan-sub-guarantee svg {
+  color: var(--neon-cyan);
+}
+
+/* ==========================================================================
+   SEÇÃO DE LEADS — FALE COM UM CONSULTOR (ENVIO PARA oneplay.equipe@gmail.com)
+   ========================================================================== */
+.leads-section {
+  position: relative;
+  padding: 5.5rem 0;
+}
+
+.leads-card {
+  background: linear-gradient(135deg, rgba(16, 22, 38, 0.92) 0%, rgba(10, 13, 22, 0.95) 100%);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 3.5rem 3rem;
+  max-width: 840px;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(0, 240, 255, 0.12);
+  backdrop-filter: blur(16px);
+}
+
+.leads-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: var(--gradient-brand);
+  box-shadow: 0 0 20px var(--neon-cyan);
+}
+
+.leads-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  margin-top: 2rem;
+}
+
+.form-row-2col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.form-label span.required {
+  color: var(--neon-magenta);
+}
+
+.form-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.form-input-icon {
+  position: absolute;
+  left: 1.1rem;
+  color: var(--text-muted);
+  pointer-events: none;
+  transition: var(--transition);
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  background: rgba(6, 9, 15, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: 0.95rem 1.1rem 0.95rem 2.85rem;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: var(--transition);
+  outline: none;
+}
+
+.form-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2300f0ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1.2rem center;
+}
+
+.form-input:focus,
+.form-select:focus {
+  border-color: var(--neon-cyan);
+  background: rgba(8, 12, 22, 0.95);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.35);
+}
+
+.form-input:focus + .form-input-icon,
+.form-input-wrapper:focus-within .form-input-icon {
+  color: var(--neon-cyan);
+}
+
+.btn-leads-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: var(--gradient-brand);
+  color: #050608;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 1.1rem 2rem;
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 8px 30px rgba(0, 240, 255, 0.4);
+  margin-top: 0.75rem;
+}
+
+.btn-leads-submit:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(0, 240, 255, 0.65), 0 0 35px rgba(224, 0, 255, 0.5);
+  color: #000;
+}
+
+.btn-leads-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.spin-icon {
+  animation: spinLoader 1s linear infinite;
+}
+
+@keyframes spinLoader {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.form-privacy-note {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+/* Feedback de Sucesso do Formulário de Leads */
+.leads-success-box {
+  display: none;
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  animation: fadeInSuccess 0.5s ease forwards;
+}
+
+@keyframes fadeInSuccess {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.leads-success-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.15);
+  border: 2px solid var(--whatsapp-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--whatsapp-green);
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 0 30px rgba(37, 211, 102, 0.4);
+}
+
+.leads-success-title {
+  font-size: 1.6rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.leads-success-desc {
+  color: var(--text-secondary);
+  font-size: 0.98rem;
+  max-width: 540px;
+  margin: 0 auto 1.8rem;
+}
+
+.leads-success-desc strong {
+  color: var(--neon-cyan);
+}
+
+.btn-whatsapp-boost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--gradient-whatsapp);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.9rem 1.8rem;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  box-shadow: var(--shadow-glow-whatsapp);
+  transition: var(--transition);
+}
+
+.btn-whatsapp-boost:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 35px rgba(37, 211, 102, 0.7);
+  color: #fff;
 }
 
 .plan-feature-item {
@@ -1539,12 +1975,23 @@ h1, h2, h3, h4, .brand-font {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
   }
 
-  .pricing-card.featured {
-    transform: scale(1);
+  .plan-features-2col {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
-  .pricing-card.featured:hover {
-    transform: translateY(-4px);
+  .form-row-2col {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .hero-tech-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .single-plan-card,
+  .leads-card {
+    padding: 2.5rem 1.5rem;
   }
 
   .social-proof-toast {
@@ -1568,6 +2015,33 @@ h1, h2, h3, h4, .brand-font {
     flex-direction: column;
     gap: 0.6rem;
     border-radius: var(--radius-md);
+  }
+
+  .hero-options-ribbon {
+    gap: 0.5rem;
+  }
+
+  .hero-option-chip {
+    font-size: 0.78rem;
+    padding: 0.45rem 0.9rem;
+  }
+
+  .hero-tech-stats {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .single-price-box {
+    margin: 1rem 0 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .single-plan-badge {
+    font-size: 0.72rem;
+    padding: 0.4rem 1.2rem;
+    width: 90%;
+    text-align: center;
+    white-space: normal;
   }
 
   .floating-whatsapp-btn span {

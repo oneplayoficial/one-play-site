@@ -128,49 +128,49 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       name: 'Marcos Vinícius',
       city: 'Belo Horizonte, MG',
-      action: 'Solicitou um Teste Grátis no WhatsApp',
+      action: 'Ativou o Plano Ideal de R$ 35,00',
       time: 'há 2 minutos',
       avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=faces'
     },
     {
       name: 'Camila Rodrigues',
       city: 'São Paulo, SP',
-      action: 'Ativou o Plano Mensal de R$ 35,00',
+      action: 'Solicitou o Teste Grátis no WhatsApp',
       time: 'há 4 minutos',
       avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=faces'
     },
     {
       name: 'Eduardo Silveira',
       city: 'Curitiba, PR',
-      action: 'Configurou a Smart TV com sucesso',
+      action: 'Liberou o acesso em 4K na Smart TV',
       time: 'há 6 minutos',
       avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=faces'
     },
     {
       name: 'Larissa Albuquerque',
       city: 'Fortaleza, CE',
-      action: 'Solicitou acesso aos Doramas e Filmes',
+      action: 'Assinou o Plano Ideal de R$ 35,00',
       time: 'há 1 minuto',
       avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=faces'
     },
     {
       name: 'Rodrigo Fontana',
       city: 'Porto Alegre, RS',
-      action: 'Ativou o acesso para assistir futebol em 4K',
+      action: 'Ativou o acesso para os jogos de futebol',
       time: 'há 3 minutos',
       avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=faces'
     },
     {
       name: 'Juliana Paiva',
       city: 'Goiânia, GO',
-      action: 'Liberou o teste para TV Box e Celular',
+      action: 'Teste aprovado e Plano Ideal ativado',
       time: 'há 5 minutos',
       avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=faces'
     },
     {
       name: 'Felipe Santos',
       city: 'Rio de Janeiro, RJ',
-      action: 'Ativou o Plano Mensal com Suporte Humanizado',
+      action: 'Ativou o Plano Mensal com Suporte VIP',
       time: 'há 7 minutos',
       avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&h=100&fit=crop&crop=faces'
     }
@@ -191,19 +191,105 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setTimeout(() => {
       socialProofToast.classList.remove('visible');
-    }, 4500);
+    }, 5500);
 
     notificationIndex = (notificationIndex + 1) % notifications.length;
   };
 
-  // Inicia as notificações após 3 segundos e repete a cada 11 segundos
+  // Inicia a primeira notificação após 5 segundos e repete a cada 20 segundos (mais suave e espaçado)
   setTimeout(() => {
     showNextNotification();
-    setInterval(showNextNotification, 11000);
-  }, 3000);
+    setInterval(showNextNotification, 20000);
+  }, 5000);
 
   /* ==========================================================================
-     6. CLIQUE SUAVE NOS LINKS DE NAVEGAÇÃO
+     6. FORMULÁRIO DE LEADS COM ENVIO DIRETO (oneplay.equipe@gmail.com)
+     ========================================================================== */
+  const leadsForm = document.getElementById('leadsForm');
+  const leadsSuccessBox = document.getElementById('leadsSuccessBox');
+  const btnSubmitLead = document.getElementById('btnSubmitLead');
+  const leadWhatsappInput = document.getElementById('leadWhatsapp');
+  const btnLeadWhatsappBoost = document.getElementById('btnLeadWhatsappBoost');
+
+  // Máscara dinâmica para WhatsApp / Telefone: (XX) XXXXX-XXXX
+  if (leadWhatsappInput) {
+    leadWhatsappInput.addEventListener('input', (e) => {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.length > 11) value = value.slice(0, 11);
+
+      if (value.length > 6) {
+        e.target.value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`;
+      } else if (value.length > 2) {
+        e.target.value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
+      } else if (value.length > 0) {
+        e.target.value = `(${value}`;
+      } else {
+        e.target.value = '';
+      }
+    });
+  }
+
+  // Envio Assíncrono com FormSubmit AJAX (sem sair da página)
+  if (leadsForm) {
+    leadsForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const nome = document.getElementById('leadNome')?.value || '';
+      const whatsapp = document.getElementById('leadWhatsapp')?.value || '';
+      const email = document.getElementById('leadEmail')?.value || '';
+      const aparelho = document.getElementById('leadDispositivo')?.value || 'Smart TV';
+
+      if (!nome || !whatsapp || !email) {
+        alert('Por favor, preencha todos os campos obrigatórios.');
+        return;
+      }
+
+      if (btnSubmitLead) {
+        btnSubmitLead.disabled = true;
+        btnSubmitLead.innerHTML = `
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="spin-icon">
+            <circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle>
+            <path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"></path>
+          </svg>
+          <span>Enviando dados...</span>
+        `;
+      }
+
+      // Preparar link de boost opcional no WhatsApp
+      if (btnLeadWhatsappBoost) {
+        const boostMsg = `Olá equipe OnePlay! Acabei de enviar meus dados no site (Nome: ${nome}, E-mail: ${email}) e gostaria de adiantar meu atendimento para o aparelho: ${aparelho}.`;
+        btnLeadWhatsappBoost.href = `${BASE_WHATSAPP_URL}?text=${encodeURIComponent(boostMsg)}`;
+      }
+
+      try {
+        const formData = new FormData(leadsForm);
+        const payload = Object.fromEntries(formData.entries());
+
+        const response = await fetch('https://formsubmit.co/ajax/oneplay.equipe@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+          leadsForm.style.display = 'none';
+          if (leadsSuccessBox) leadsSuccessBox.style.display = 'block';
+        } else {
+          // Fallback caso a API bloqueie cross-origin
+          leadsForm.submit();
+        }
+      } catch (err) {
+        console.warn('Envio AJAX falhou, usando fallback direto:', err);
+        leadsForm.submit();
+      }
+    });
+  }
+
+  /* ==========================================================================
+     7. CLIQUE SUAVE NOS LINKS DE NAVEGAÇÃO
      ========================================================================== */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
