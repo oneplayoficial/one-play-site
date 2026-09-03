@@ -16,7 +16,7 @@
   --border-neon-magenta: rgba(224, 0, 255, 0.3);
 
   /* Acentos Neon da Marca */
-  --neon-cyan: #00f0ff;
+  --neon-cyan: #015091;
   --neon-blue: #2979ff;
   --neon-magenta: #e000ff;
   --neon-purple: #9d4edd;
@@ -55,7 +55,9 @@
 }
 
 /* Reset Global */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -119,7 +121,7 @@ body {
   position: absolute;
   inset: 0;
   z-index: 2;
-  background: 
+  background:
     radial-gradient(circle at 10% 20%, rgba(0, 240, 255, 0.14) 0%, transparent 45%),
     radial-gradient(circle at 90% 15%, rgba(224, 0, 255, 0.16) 0%, transparent 48%),
     radial-gradient(circle at 50% 50%, rgba(41, 121, 255, 0.08) 0%, transparent 60%),
@@ -132,7 +134,7 @@ body {
   position: absolute;
   inset: 0;
   z-index: 3;
-  background-image: 
+  background-image:
     linear-gradient(rgba(0, 240, 255, 0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(224, 0, 255, 0.03) 1px, transparent 1px);
   background-size: 50px 50px;
@@ -141,7 +143,11 @@ body {
 }
 
 /* Tipografia e Helpers */
-h1, h2, h3, h4, .brand-font {
+h1,
+h2,
+h3,
+h4,
+.brand-font {
   font-family: var(--font-heading);
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -199,8 +205,17 @@ h1, h2, h3, h4, .brand-font {
 }
 
 @keyframes pulse-dot {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.35); opacity: 0.6; }
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.35);
+    opacity: 0.6;
+  }
 }
 
 /* ==========================================================================
@@ -468,8 +483,15 @@ h1, h2, h3, h4, .brand-font {
 }
 
 @keyframes pulse-brand-glow {
-  0% { transform: scale(0.95); opacity: 0.65; }
-  100% { transform: scale(1.08); opacity: 1; }
+  0% {
+    transform: scale(0.95);
+    opacity: 0.65;
+  }
+
+  100% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
 }
 
 .hero-fluid-logo-frame {
@@ -495,8 +517,15 @@ h1, h2, h3, h4, .brand-font {
 }
 
 @keyframes floatingLogo {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 .hero-fluid-logo-frame:hover .hero-fluid-logo-img {
@@ -915,13 +944,23 @@ h1, h2, h3, h4, .brand-font {
 }
 
 @keyframes marquee-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes marquee-scroll-reverse {
-  from { transform: translateX(-50%); }
-  to { transform: translateX(0); }
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
 
 /* Poster Card */
@@ -1132,7 +1171,7 @@ h1, h2, h3, h4, .brand-font {
   position: absolute;
   inset: -2px;
   border-radius: var(--radius-lg);
-  background: var(--gradient-brand);
+  background: (0, 240, 255, 0.15);
   z-index: -1;
 }
 
@@ -1161,7 +1200,7 @@ h1, h2, h3, h4, .brand-font {
   border-radius: var(--radius-full);
   background: rgba(0, 240, 255, 0.15);
   border: 1px solid rgba(0, 240, 255, 0.5);
-  color: var(--neon-cyan);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -1172,14 +1211,14 @@ h1, h2, h3, h4, .brand-font {
 }
 
 .comparison-card-title {
-  font-size: 1.5rem;
+  font-size: 1.9rem;
   font-weight: 900;
   margin-bottom: 0.4rem;
 }
 
 .comparison-card-desc {
-  font-size: 0.92rem;
-  color: var(--text-secondary);
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: 1.8rem;
   line-height: 1.5;
 }
@@ -1229,7 +1268,7 @@ h1, h2, h3, h4, .brand-font {
 }
 
 .comparison-card.oneplay .service-price {
-  color: #00ff88;
+  color: #00ffff;
 }
 
 .comparison-total-box {
@@ -1433,8 +1472,8 @@ h1, h2, h3, h4, .brand-font {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-size: 0.95rem;
-  color: var(--text-secondary);
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1.4;
 }
 
@@ -1586,7 +1625,7 @@ h1, h2, h3, h4, .brand-font {
   box-shadow: 0 0 20px rgba(0, 240, 255, 0.35);
 }
 
-.form-input:focus + .form-input-icon,
+.form-input:focus+.form-input-icon,
 .form-input-wrapper:focus-within .form-input-icon {
   color: var(--neon-cyan);
 }
@@ -1629,8 +1668,13 @@ h1, h2, h3, h4, .brand-font {
 }
 
 @keyframes spinLoader {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .form-privacy-note {
@@ -1649,8 +1693,15 @@ h1, h2, h3, h4, .brand-font {
 }
 
 @keyframes fadeInSuccess {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .leads-success-icon {
@@ -1710,27 +1761,7 @@ h1, h2, h3, h4, .brand-font {
   color: #fff;
 }
 
-.plan-feature-item {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-}
 
-.plan-feature-item svg {
-  color: var(--whatsapp-green);
-  flex-shrink: 0;
-}
-
-.plan-feature-item.highlight {
-  color: #fff;
-  font-weight: 700;
-}
-
-.plan-feature-item.highlight svg {
-  color: var(--neon-cyan);
-}
 
 /* ==========================================================================
    GARANTIA BLINDADA CONTRA INSTABILIDADE
@@ -2144,14 +2175,29 @@ h1, h2, h3, h4, .brand-font {
 }
 
 @keyframes float-soft {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 @keyframes pulse-badge {
-  0% { box-shadow: 0 0 0 0 rgba(255, 0, 85, 0.7); }
-  70% { box-shadow: 0 0 0 8px rgba(255, 0, 85, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 0, 85, 0); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 85, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 8px rgba(255, 0, 85, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 85, 0);
+  }
 }
 
 /* Live Social Proof Toast */
