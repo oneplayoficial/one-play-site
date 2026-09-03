@@ -875,33 +875,45 @@
 
         <!-- Seletor de Aparelhos -->
         <div class="device-selector-grid">
-          <button type="button" class="device-btn active"
-            data-device="Smart TV (Samsung / LG / TCL / Philips)"></button>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect>
-            <polyline points="17 2 12 7 7 2"></polyline>
-          </svg>
-          <span>Smart TV</span>
+
+          <!-- Botão Smart TV (Ativo) -->
+          <button type="button" class="device-btn active" data-device="Smart TV (Samsung / LG / TCL / Philips)"
+            style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 16px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              style="width: 28px; height: 28px; flex-shrink: 0;">
+              <rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect>
+              <polyline points="17 2 12 7 7 2"></polyline>
+            </svg>
+            <span>Smart TV</span>
           </button>
 
-          <button type="button" class="device-btn" data-device="TV Box ou Fire TV Stick">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <!-- Botão TV Box / Firestick -->
+          <button type="button" class="device-btn" data-device="TV Box ou Fire TV Stick"
+            style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 16px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              style="width: 28px; height: 28px; flex-shrink: 0;">
               <rect x="2" y="4" width="20" height="16" rx="2"></rect>
               <line x1="6" y1="12" x2="18" y2="12"></line>
             </svg>
             <span>TV Box / Firestick</span>
           </button>
 
-          <button type="button" class="device-btn" data-device="Celular (Android)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <!-- Botão Celular Android -->
+          <button type="button" class="device-btn" data-device="Celular (Android)"
+            style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 16px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              style="width: 28px; height: 28px; flex-shrink: 0;">
               <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
               <line x1="12" y1="18" x2="12.01" y2="18"></line>
             </svg>
             <span>Celular (Android)</span>
           </button>
 
-          <button type="button" class="device-btn" data-device="Computador ou Notebook">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <!-- Botão PC / Notebook -->
+          <button type="button" class="device-btn" data-device="Computador ou Notebook"
+            style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 16px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              style="width: 28px; height: 28px; flex-shrink: 0;">
               <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
               <line x1="8" y1="21" x2="16" y2="21"></line>
               <line x1="12" y1="17" x2="12" y2="21"></line>
@@ -909,21 +921,25 @@
             <span>PC / Notebook</span>
           </button>
 
-          <button type="button" class="device-btn" data-device="Tablet">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <!-- Botão Tablet -->
+          <button type="button" class="device-btn" data-device="Tablet"
+            style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 16px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              style="width: 28px; height: 28px; flex-shrink: 0;">
               <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
               <line x1="12" y1="18" x2="12.01" y2="18"></line>
             </svg>
-            <span>Tablet </span>
+            <span>Tablet</span>
           </button>
+
         </div>
 
         <!-- Resultado do Simulador com Botão Direto -->
         <div class="simulator-result-cta">
           <p class="simulator-feedback-text">
-            Aparelho escolhido: <strong id="selectedDeviceName">Smart TV (Samsung / LG / TCL/ Philips)</strong>
+            Aparelho escolhido: <strong id="selectedDeviceName">Smart TV (Samsung / LG / TCL / Philips)</strong>
           </p>
-          <a href="https://wa.me/5527998784485?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20OnePlay%20e%20quero%20solicitar%20meu%20TESTE%20GR%C3%81TIS%20imediato%20para%20o%20meu%20aparelho:%20Smart%20TV%20(Samsung%20/%20LG%20/%20TCL/ Philips)."
+          <a href="https://wa.me/5527998784485?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20OnePlay%20e%20quero%20solicitar%20meu%20TESTE%20GR%C3%81TIS%20imediato%20para%20o%20meu%20aparelho:%20Smart%20TV%20(Samsung%20%2F%20LG%20%2F%20TCL%20%2F%20Philips)."
             target="_blank" rel="noopener noreferrer" class="btn-primary-whatsapp" id="simulatorCtaBtn">
             <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
               <path
@@ -1342,8 +1358,9 @@
               <label for="leadDispositivo" class="form-label">
                 <span>Onde você vai assistir?</span>
               </label>
-              <div class="form-input-wrapper">
-                <select id="leadDispositivo" name="Aparelho" class="form-select">
+              <div class="form-input-wrapper" style="position: relative; display: flex; align-items: center;">
+                <select id="leadDispositivo" name="Aparelho" class="form-select"
+                  style="width: 100%; padding-right: 40px; -webkit-appearance: none; -moz-appearance: none; appearance: none;">
                   <option value="Smart TV (Samsung / LG / TCL / Philips)">Smart TV (Samsung / LG / TCL / Philips)
                   </option>
                   <option value="TV Box / Fire TV Stick">TV Box ou Fire TV Stick</option>
@@ -1352,25 +1369,24 @@
                   <option value="Tablet">Tablet</option>
                   <option value="Outro / Múltiplos Aparelhos">Outro / Múltiplos Aparelhos</option>
                 </select>
-                <svg class="form-input-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
-                  viewBox="0 0 24 24">
+                <svg class="form-input-icon" style="position: absolute; right: 12px; pointer-events: none;" width="18"
+                  height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                   <rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect>
                   <polyline points="17 2 12 7 7 2"></polyline>
                 </svg>
               </div>
             </div>
-          </div>
 
-          <button type="submit" class="btn-leads-submit" id="btnSubmitLead">
-            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
-            </svg>
-            <span>SOLICITAR ATENDIMENTO PERSONALIZADO</span>
-          </button>
+            <button type="submit" class="btn-leads-submit" id="btnSubmitLead">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+              </svg>
+              <span>SOLICITAR ATENDIMENTO PERSONALIZADO</span>
+            </button>
 
-          <p class="form-privacy-note">
-            🔒 Seus dados estão 100% seguros. Não enviamos spam. Atendimento confidencial pela equipe OnePlay.
-          </p>
+            <p class="form-privacy-note">
+              🔒 Seus dados estão 100% seguros. Não enviamos spam. Atendimento confidencial pela equipe OnePlay.
+            </p>
         </form>
 
         <!-- Caixa de Confirmação de Sucesso -->
