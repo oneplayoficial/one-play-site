@@ -27,26 +27,61 @@ document.addEventListener('DOMContentLoaded', () => {
      2. MOBILE MENU TOGGLE
      ========================================================================== */
   const mobileToggle = document.getElementById('mobileToggle');
-  const navMenu = document.getElementById('navMenu');
+  const navMenuWrapper = document.getElementById('navMenuWrapper');
 
-  if (mobileToggle && navMenu) {
+  if (mobileToggle && navMenuWrapper) {
     mobileToggle.addEventListener('click', () => {
-      const isOpen = navMenu.classList.toggle('mobile-open');
+      const isOpen = navMenuWrapper.classList.toggle('mobile-open');
+      mobileToggle.classList.toggle('open', isOpen);
       mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      mobileToggle.innerHTML = isOpen 
-        ? `<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>`
-        : `<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>`;
     });
 
     // Fechar menu mobile ao clicar em um link
-    navMenu.querySelectorAll('.nav-link').forEach(link => {
+    navMenuWrapper.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
-        navMenu.classList.remove('mobile-open');
+        navMenuWrapper.classList.remove('mobile-open');
+        mobileToggle.classList.remove('open');
         mobileToggle.setAttribute('aria-expanded', 'false');
-        mobileToggle.innerHTML = `<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>`;
       });
     });
+
+    // Fechar menu ao clicar fora
+    document.addEventListener('click', (e) => {
+      if (!navbar?.contains(e.target) && !navMenuWrapper.contains(e.target)) {
+        navMenuWrapper.classList.remove('mobile-open');
+        mobileToggle.classList.remove('open');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
   }
+
+  /* ==========================================================================
+     2b. ACTIVE LINK TRACKING (Scroll Spy)
+     ========================================================================== */
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '-30% 0px -60% 0px',
+    threshold: 0
+  };
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${id}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(section => sectionObserver.observe(section));
 
   /* ==========================================================================
      3. FAQ ACCORDION INTERATIVO
