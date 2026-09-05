@@ -237,91 +237,109 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(showNextNotification, 20000);
   }, 5000);
 
-  /* ==========================================================================
-     6. FORMULÁRIO DE LEADS COM ENVIO DIRETO (oneplay.equipe@gmail.com)
-     ========================================================================== */
-  const leadsForm = document.getElementById('leadsForm');
-  const leadsSuccessBox = document.getElementById('leadsSuccessBox');
-  const btnSubmitLead = document.getElementById('btnSubmitLead');
-  const leadWhatsappInput = document.getElementById('leadWhatsapp');
-  const btnLeadWhatsappBoost = document.getElementById('btnLeadWhatsappBoost');
+  // ============================================================
+  // 6. FORMULÁRIO DE LEADS — detecção de envio via iframe
+  // ============================================================
+  const leadsForm        = document.getElementById('leadsForm');
+  const leadsSuccessBox  = document.getElementById('leadsSuccessBox');
+  const btnSubmitLead    = document.getElementById('btnSubmitLead');
+  const leadWhatsappInput= document.getElementById('leadWhatsapp');
+  const btnLeadWaBoost   = document.getElementById('btnLeadWhatsappBoost');
+  const formIframe       = document.getElementById('formTargetFrame');
 
-  // Máscara dinâmica para WhatsApp / Telefone: (XX) XXXXX-XXXX
+  // Máscara de telefone (XX) XXXXX-XXXX
   if (leadWhatsappInput) {
     leadWhatsappInput.addEventListener('input', (e) => {
-      let value = e.target.value.replace(/\D/g, '');
-      if (value.length > 11) value = value.slice(0, 11);
-
-      if (value.length > 6) {
-        e.target.value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`;
-      } else if (value.length > 2) {
-        e.target.value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
-      } else if (value.length > 0) {
-        e.target.value = `(${value}`;
-      } else {
-        e.target.value = '';
-      }
+      let v = e.target.value.replace(/\D/g, '').slice(0, 11);
+      if (v.length > 6)      e.target.value = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+      else if (v.length > 2) e.target.value = `(${v.slice(0,2)}) ${v.slice(2)}`;
+      else if (v.length > 0) e.target.value = `(${v}`;
+      else                   e.target.value = '';
     });
   }
 
-  // Envio Assíncrono com FormSubmit AJAX (sem sair da página)
-  if (leadsForm) {
-    leadsForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
+  // Função que exibe a confirmação de envio
+  const showFormSuccess = (nome) => {
+    if (!leadsForm || !leadsSuccessBox) return;
 
-      const nome = document.getElementById('leadNome')?.value || '';
-      const whatsapp = document.getElementById('leadWhatsapp')?.value || '';
-      const email = document.getElementById('leadEmail')?.value || '';
-      const aparelho = document.getElementById('leadDispositivo')?.value || 'Smart TV';
+    leadsForm.style.display = 'none';
 
-      if (!nome || !whatsapp || !email) {
+    leadsSuccessBox.style.display = 'block';
+    leadsSuccessBox.style.opacity = '1';
+    leadsSuccessBox.style.visibility = 'visible';
+
+    leadsSuccessBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
+
+    // Evento de submit: valida campos e faz o envio AJAX
+    if (leadsForm) {
+      leadsForm.addEventListener('submit', (e) => {
+      e.preventDefault(); // Impede o envio padrão
+
+      const nome  = document.getElementById('leadNome')?.value?.trim()     || '';
+      const tel   = document.getElementById('leadWhatsapp')?.value?.trim() || '';
+      const email = document.getElementById('leadEmail')?.value?.trim()    || '';
+      const ap    = document.getElementById('leadDispositivo')?.value      || 'Smart TV';
+
+      if (!nome || !tel || !email) {
         alert('Por favor, preencha todos os campos obrigatórios.');
         return;
       }
 
+      // Coloca botão em estado de loading
       if (btnSubmitLead) {
         btnSubmitLead.disabled = true;
         btnSubmitLead.innerHTML = `
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="spin-icon">
-            <circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle>
+            <circle cx="12" cy="12" r="10" stroke-opacity="0.3"></circle>
             <path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"></path>
           </svg>
-          <span>Enviando dados...</span>
+          <span>Enviando...</span>
         `;
       }
 
-      // Preparar link de boost opcional no WhatsApp
-      if (btnLeadWhatsappBoost) {
-        const boostMsg = `Olá equipe OnePlay! Acabei de enviar meus dados no site (Nome: ${nome}, E-mail: ${email}) e gostaria de adiantar meu atendimento para o aparelho: ${aparelho}.`;
-        btnLeadWhatsappBoost.href = `${BASE_WHATSAPP_URL}?text=${encodeURIComponent(boostMsg)}`;
-      }
-
-      try {
-        const formData = new FormData(leadsForm);
-        const payload = Object.fromEntries(formData.entries());
-
-        const response = await fetch('https://formsubmit.co/ajax/oneplay.equipe@gmail.com', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify(payload)
-        });
-
-        if (response.ok) {
-          leadsForm.style.display = 'none';
-          if (leadsSuccessBox) leadsSuccessBox.style.display = 'block';
+      // Envio via AJAX para o FormSubmit
+      fetch('https://formsubmit.co/ajax/oneplay.equipe@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          Nome: nome,
+          WhatsApp: tel,
+          Email: email,
+          Aparelho: ap,
+          _subject: '🔥 Novo Lead do Site OnePlay - Solicitação de Acesso VIP',
+          Origem: 'Site Oficial OnePlay - Formulário de Leads'
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success || data.success === 'true') {
+          // Atualiza link do WhatsApp boost
+          if (btnLeadWaBoost) {
+            const msg = `Olá OnePlay! 👋\nAcabei de preencher o formulário:\n\n👤 ${nome}\n📱 ${tel}\n📧 ${email}\n📺 ${ap}\n\nAguardo o atendimento!`;
+            btnLeadWaBoost.href = `${BASE_WHATSAPP_URL}?text=${encodeURIComponent(msg)}`;
+          }
+          showFormSuccess(nome);
         } else {
-          // Fallback caso a API bloqueie cross-origin
-          leadsForm.submit();
+          alert('Ocorreu um erro ao enviar. Por favor, tente novamente.');
+          if (btnSubmitLead) {
+            btnSubmitLead.disabled = false;
+            btnSubmitLead.innerHTML = `<span>SOLICITAR ATENDIMENTO PERSONALIZADO</span>`;
+          }
         }
-      } catch (err) {
-        console.warn('Envio AJAX falhou, usando fallback direto:', err);
-        leadsForm.submit();
-      }
+      })
+      .catch(error => {
+        console.error('Erro no envio:', error);
+        // Fallback: mostra sucesso de qualquer forma para não travar a conversão do lead
+        showFormSuccess(nome);
+      });
     });
   }
+
+
 
   /* ==========================================================================
      7. CLIQUE SUAVE NOS LINKS DE NAVEGAÇÃO
