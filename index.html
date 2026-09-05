@@ -31,6 +31,19 @@
   <link rel="icon" type="image/jpeg" href="logo-circle.jpeg" />
   <link rel="apple-touch-icon" href="logo-circle.jpeg" />
 
+  <!-- Preconnect & Preload (Performance) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
+  </noscript>
+  <link rel="preload" href="bg-video-wall.jpg" as="image" />
+
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -48,7 +61,8 @@
   <!-- Barra de Aviso Superior (Urgência & Gatilho) -->
   <div class="top-ticker">
     <span class="ticker-dot"></span>
-    <span>⚡ SERVIDOR 99.9% ESTÁVEL • TESTE GRÁTIS LIBERADO NA HORA NO WHATSAPP • ATENDIMENTO 24H</span>
+    <span>⚡ SERVIDOR 99.9% ESTÁVEL <!-- [VALIDAR ANTES DA PUBLICAÇÃO] --> • TESTE GRÁTIS LIBERADO NA HORA NO WHATSAPP •
+      ATENDIMENTO 24H</span>
   </div>
 
   <!-- Header Fixo: Logo + Nav + Redes Sociais + Botão Teste Grátis -->
@@ -123,14 +137,15 @@
 
       <!-- Badge de Escassez & Confiança -->
       <div class="hero-badge">
-        <span>🔥 +12.000 CLIENTES ATIVOS</span> • LIBERAÇÃO IMEDIATA APÓS O TESTE
+        <span>🔥 +12.000 CLIENTES ATIVOS</span> <!-- [VALIDAR ANTES DA PUBLICAÇÃO] --> • LIBERAÇÃO IMEDIATA APÓS O TESTE
       </div>
 
       <!-- Logo Oficial OnePlay 100% Visível em 3D Neon com Aura Tecnológica -->
       <div class="hero-brand-fluid-wrapper">
         <div class="hero-brand-glow" aria-hidden="true"></div>
         <div class="hero-fluid-logo-frame">
-          <img src="logo-oficial-nova.jpg" alt="OnePlay - Em um só Play" class="hero-fluid-logo-img" style="border-radius: 12px; object-fit: contain; mix-blend-mode: screen;" />
+          <img src="logo-oficial-nova.jpg" alt="OnePlay - Em um só Play" class="hero-fluid-logo-img"
+            style="border-radius: 12px; object-fit: contain; mix-blend-mode: screen;" />
         </div>
       </div>
 
@@ -144,126 +159,103 @@
       <p class="hero-subtitle">
         Tenha acesso ilimitado a <strong>Canais Ao Vivo em 4K</strong>, filmes do cinema, séries completas,
         <strong>doramas dublados/legendados</strong>, animes atualizados e todos os esportes.
-        Tudo isso por apenas <strong>R$ 35 mensais</strong> e sem fidelidade!
       </p>
 
       <!-- CTAs Principais -->
-      <div class="hero-cta-group">
-        <a href="https://wa.me/5527998784485?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20OnePlay%20e%20quero%20fazer%20o%20TESTE%20GR%C3%81TIS%20agora%20mesmo."
-          target="_blank" rel="noopener noreferrer" class="btn-primary-whatsapp">
-          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.15-.174.199-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.82 9.82 0 016.988 2.898 9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-          </svg>
-          <span>Solicitar Teste Grátis no WhatsApp</span>
-        </a>
-        <a href="#planos" class="btn-neon-outline">
-          <span>Ver Plano Ideal (R$ 35)</span>
-        </a>
-      </div>
+      <<!-- CTAs Principais -->
+        <div class="hero-cta-group" style="display: flex; justify-content: center; width: 100%;">
+          <a href="https://wa.me/5527998784485?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20OnePlay%20e%20quero%20fazer%20o%20TESTE%20GR%C3%81TIS%20agora"
+            target="_blank" rel="noopener noreferrer" class="btn-primary-whatsapp">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075">
+              </path>
+            </svg>
+            <span>Solicitar Teste Grátis no WhatsApp</span>
+          </a>
+        </div>
 
-      <!-- Selos de Confiança (Trust Strip) -->
-      <div class="hero-badges-strip">
-        <div class="trust-item">
-          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
-          </svg>
-          <span>Teste Grátis Sem Compromisso</span>
+        <!-- Selos de Confiança (Trust Strip) -->
+        <div class="hero-badges-strip">
+          <div class="trust-item">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          <div class="trust-item guarantee">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+              </path>
+            </svg>
+            <span>Garantia de Devolução se Cair</span>
+          </div>
+          <div class="trust-item">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+            <span>Liberação Imediata</span>
+          </div>
+          <div class="trust-item whatsapp">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z">
+              </path>
+            </svg>
+            <span>Suporte 100% Humanizado</span>
+          </div>
         </div>
-        <div class="trust-item guarantee">
-          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
-            </path>
-          </svg>
-          <span>Garantia de Devolução se Cair</span>
-        </div>
-        <div class="trust-item">
-          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-          </svg>
-          <span>Liberação Imediata</span>
-        </div>
-        <div class="trust-item whatsapp">
-          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z">
-            </path>
-          </svg>
-          <span>Suporte 100% Humanizado</span>
-        </div>
-      </div>
 
-      <!-- Faixa Tecnológica de Opções Imediatas -->
-      <div class="hero-options-ribbon">
-        <a href="#catalogo" class="hero-option-chip">
-          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect>
-            <polyline points="17 2 12 7 7 2"></polyline>
-          </svg>
-          <span>3.000+ Canais Ao Vivo</span>
-        </a>
-        <a href="#catalogo" class="hero-option-chip magenta">
-          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
-            <line x1="7" y1="2" x2="7" y2="22"></line>
-            <line x1="17" y1="2" x2="17" y2="22"></line>
-          </svg>
-          <span>Filmes & Séries</span>
-        </a>
-        <a href="#catalogo" class="hero-option-chip">
-          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10"></circle>
-            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
-            <path d="M2 12h20"></path>
-          </svg>
-          <span>Esportes Sem Delay</span>
-        </a>
-        <a href="#catalogo" class="hero-option-chip magenta">
-          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path
-              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
-            </path>
-          </svg>
-          <span>Doramas Dublados</span>
-        </a>
-        <a href="#catalogo" class="hero-option-chip">
-          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-            </polygon>
-          </svg>
-          <span>Animes em 4K</span>
-        </a>
-        <a href="#simulador" class="hero-option-chip magenta">
-          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-            <line x1="8" y1="21" x2="16" y2="21"></line>
-            <line x1="12" y1="17" x2="12" y2="21"></line>
-          </svg>
-          <span>Em Qualquer Aparelho</span>
-        </a>
-      </div>
-
-      <!-- Métricas Tecnológicas do Servidor -->
-      <div class="hero-tech-stats">
-        <div class="tech-stat-card">
-          <div class="tech-stat-value">99.9%</div>
-          <div class="tech-stat-label">Estabilidade Uptime</div>
+        <!-- Faixa Tecnológica de Opções Imediatas -->
+        <div class="hero-options-ribbon">
+          <a href="#catalogo" class="hero-option-chip">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect>
+              <polyline points="17 2 12 7 7 2"></polyline>
+            </svg>
+            <span>3.000+ Canais Ao Vivo</span>
+          </a>
+          <a href="#catalogo" class="hero-option-chip magenta">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+              <line x1="7" y1="2" x2="7" y2="22"></line>
+              <line x1="17" y1="2" x2="17" y2="22"></line>
+            </svg>
+            <span>Filmes & Séries</span>
+          </a>
+          <a href="#catalogo" class="hero-option-chip">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+              <path d="M2 12h20"></path>
+            </svg>
+            <span>Esportes Ao Vivo</span>
+          </a>
+          <a href="#catalogo" class="hero-option-chip magenta">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+              </path>
+            </svg>
+            <span>Doramas Dublados</span>
+          </a>
+          <a href="#catalogo" class="hero-option-chip">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+              </polygon>
+            </svg>
+            <span>Animes em 4K</span>
+          </a>
+          <a href="#simulador" class="hero-option-chip magenta">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+            <span>Conteúdo Infantil</span>
+          </a>
         </div>
-        <div class="tech-stat-card">
-          <div class="tech-stat-value">+3.000</div>
-          <div class="tech-stat-label">Canais Full HD & 4K</div>
-        </div>
-        <div class="tech-stat-card">
-          <div class="tech-stat-value">R$ 35</div>
-          <div class="tech-stat-label">Mensal Sem Fidelidade</div>
-        </div>
-        <div class="tech-stat-card">
-          <div class="tech-stat-value">0 min</div>
-          <div class="tech-stat-label">Liberação Imediata</div>
-        </div>
-      </div>
 
     </div>
   </section>
@@ -274,593 +266,592 @@
   </div>
 
   <!-- Catálogo Interativo / Marquee Infinito de Conteúdos -->
-  <section class="catalog-section" id="catalogo">
+  <section class="catalog-section" id="catalogo" style="padding-top: 0px; margin-top: -60px;">
     <div class="container">
-      <div class="section-header" style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
-        <img src="logo-oficial-nova.jpg" alt="OnePlay" class="catalog-logo" style="width: 100%; max-width: 120px; height: auto; border-radius: 8px; object-fit: contain; mix-blend-mode: screen;" />
+      <div class="section-header" style="text-align: center;">
         <div>
           <span class="section-tag">CATÁLOGO COMPLETO</span>
           <h2 class="section-title">OS CONTEÚDOS <span class="text-gradient">MAIS PROCURADOS</span></h2>
-          <p class="section-description">Uma pequena amostra do que nossos clientes assistem todos os dias com qualidade de cinema.</p>
+          <p class="section-description">Uma pequena amostra do que nossos clientes assistem todos os dias com qualidade
+            de cinema.</p>
         </div>
       </div>
     </div>
-
-    <!-- Categoria 1: Filmes Mais Assistidos -->
-    <div class="category-block">
-      <div class="category-header">
-        <div class="category-bar"></div>
-        <h3 class="category-title">🎬 Filmes em Destaque</h3>
-        <span class="category-count">+15.000 Títulos</span>
-      </div>
-
-      <div class="marquee-container">
-        <div class="marquee-track">
-          <!-- Superman -->
-          <div class="poster-card">
-            <img src="https://image.tmdb.org/t/p/w500/ombsmhYUqR4qqOLOxAyr5V8hbyv.jpg" alt="Superman" class="poster-img"
-              loading="lazy" />
-            <span class="poster-badge">NOVO</span>
-            <div class="poster-info">
-              <p class="poster-genre">Ação • Aventura</p>
-              <p class="poster-title">Superman</p>
-            </div>
-          </div>
-          <!-- Duna 2 -->
-          <div class="poster-card">
-            <img src="https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg" alt="Duna 2" class="poster-img"
-              loading="lazy" />
-            <span class="poster-badge top10">4K</span>
-            <div class="poster-info">
-              <p class="poster-genre">Ficção Científica</p>
-              <p class="poster-title">Duna: Parte 2</p>
-            </div>
-          </div>
-          <!-- Jurassic World -->
-          <div class="poster-card">
-            <img src="https://image.tmdb.org/t/p/w500/1RgPyOhN4DRs225BGTlHJqCudII.jpg" alt="Jurassic World"
-              class="poster-img" loading="lazy" />
-            <span class="poster-badge">TOP 10</span>
-            <div class="poster-info">
-              <p class="poster-genre">Ação • Aventura</p>
-              <p class="poster-title">Jurassic World: Recomeço</p>
-            </div>
-          </div>
-          <!-- Pecadores -->
-          <div class="poster-card">
-            <img src="https://image.tmdb.org/t/p/w500/fYtHxTxlhzD4QWfEbrC1rypysSD.jpg" alt="Pecadores"
-              class="poster-img" loading="lazy" />
-            <span class="poster-badge">NOVO</span>
-            <div class="poster-info">
-              <p class="poster-genre">Terror • Suspense</p>
-              <p class="poster-title">Pecadores</p>
-            </div>
-          </div>
-          <!-- Missao Impossivel -->
-          <div class="poster-card">
-            <img src="https://image.tmdb.org/t/p/w500/NNxYkU70HPurnNCSiCjYAmacwm.jpg" alt="Missão Impossível"
-              class="poster-img" loading="lazy" />
-            <span class="poster-badge top10">4K</span>
-            <div class="poster-info">
-              <p class="poster-genre">Ação • Espionagem</p>
-              <p class="poster-title">Missão Impossível</p>
-            </div>
-          </div>
-          <!-- Thunderbolts -->
-          <div class="poster-card">
-            <img src="https://image.tmdb.org/t/p/w500/m9EtP1Yrzv6v7dMaC9mRaGhd1um.jpg" alt="Thunderbolts"
-              class="poster-img" loading="lazy" />
-            <span class="poster-badge">NOVO</span>
-            <div class="poster-info">
-              <p class="poster-genre">Super-Heróis • Ação</p>
-              <p class="poster-title">Thunderbolts*</p>
-            </div>
-          </div>
-          <!-- Minecraft -->
-          <div class="poster-card">
-            <img src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Minecraft"
-              class="poster-img" loading="lazy" />
-            <span class="poster-badge">FAMÍLIA</span>
-            <div class="poster-info">
-              <p class="poster-genre">Aventura • Game</p>
-              <p class="poster-title">Minecraft: O Filme</p>
-            </div>
-          </div>
-          <!-- Wicked -->
-          <div class="poster-card">
-            <img src="https://image.tmdb.org/t/p/w500/c5Tqxeo1UpBvnAc3csUm7j3hlQl.jpg" alt="Wicked" class="poster-img"
-              loading="lazy" />
-            <span class="poster-badge top10">TOP 10</span>
-            <div class="poster-info">
-              <p class="poster-genre">Musical • Fantasia</p>
-              <p class="poster-title">Wicked</p>
-            </div>
-          </div>
-
-          <!-- DUPLICATA PARA LOOP CONTÍNUO PERFEITO -->
-          <div class="poster-card">
-            <img src="https://image.tmdb.org/t/p/w500/ombsmhYUqR4qqOLOxAyr5V8hbyv.jpg" alt="Superman" class="poster-img"
-              loading="lazy" />
-            <span class="poster-badge">NOVO</span>
-            <div class="poster-info">
-              <p class="poster-genre">Ação • Aventura</p>
-              <p class="poster-title">Superman</p>
-            </div>
-          </div>
-          <div class="poster-card">
-            <img src="https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg" alt="Duna 2" class="poster-img"
-              loading="lazy" />
-            <span class="poster-badge top10">4K</span>
-            <div class="poster-info">
-              <p class="poster-genre">Ficção Científica</p>
-              <p class="poster-title">Duna: Parte 2</p>
-            </div>
-          </div>
-          <div class="poster-card">
-            <img src="https://image.tmdb.org/t/p/w500/1RgPyOhN4DRs225BGTlHJqCudII.jpg" alt="Jurassic World"
-              class="poster-img" loading="lazy" />
-            <span class="poster-badge">TOP 10</span>
-            <div class="poster-info">
-              <p class="poster-genre">Ação • Aventura</p>
-              <p class="poster-title">Jurassic World: Recomeço</p>
-            </div>
-          </div>
-          <div class="poster-card">
-            <img src="https://image.tmdb.org/t/p/w500/fYtHxTxlhzD4QWfEbrC1rypysSD.jpg" alt="Pecadores"
-              class="poster-img" loading="lazy" />
-            <span class="poster-badge">NOVO</span>
-            <div class="poster-info">
-              <p class="poster-genre">Terror • Suspense</p>
-              <p class="poster-title">Pecadores</p>
-            </div>
-          </div>
-        </div>
-      </div>
+  </section>
+  <!-- Categoria 1: Filmes Mais Assistidos -->
+  <div class="category-block">
+    <div class="category-header">
+      <div class="category-bar"></div>
+      <h3 class="category-title">🎬 Filmes em Destaque</h3>
+      <span class="category-count">+15.000 Títulos</span>
     </div>
 
-    <!-- Categoria 2: Séries Mais Vistas -->
-    <div class="category-block">
-      <div class="category-header">
-        <div class="category-bar"></div>
-        <h3 class="category-title">📺 Séries Viciantes</h3>
-        <span class="category-count">+8.000 Séries</span>
-      </div>
+    <div class="marquee-container">
+      <div class="marquee-track">
+        <!-- Superman -->
+        <div class="poster-card">
+          <img src="https://image.tmdb.org/t/p/w500/ombsmhYUqR4qqOLOxAyr5V8hbyv.jpg" alt="Superman" class="poster-img"
+            loading="lazy" />
+          <span class="poster-badge">NOVO</span>
+          <div class="poster-info">
+            <p class="poster-genre">Ação • Aventura</p>
+            <p class="poster-title">Superman</p>
+          </div>
+        </div>
+        <!-- Duna 2 -->
+        <div class="poster-card">
+          <img src="https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg" alt="Duna 2" class="poster-img"
+            loading="lazy" />
+          <span class="poster-badge top10">4K</span>
+          <div class="poster-info">
+            <p class="poster-genre">Ficção Científica</p>
+            <p class="poster-title">Duna: Parte 2</p>
+          </div>
+        </div>
+        <!-- Jurassic World -->
+        <div class="poster-card">
+          <img src="https://image.tmdb.org/t/p/w500/1RgPyOhN4DRs225BGTlHJqCudII.jpg" alt="Jurassic World"
+            class="poster-img" loading="lazy" />
+          <span class="poster-badge">TOP 10</span>
+          <div class="poster-info">
+            <p class="poster-genre">Ação • Aventura</p>
+            <p class="poster-title">Jurassic World: Recomeço</p>
+          </div>
+        </div>
+        <!-- Pecadores -->
+        <div class="poster-card">
+          <img src="https://image.tmdb.org/t/p/w500/fYtHxTxlhzD4QWfEbrC1rypysSD.jpg" alt="Pecadores" class="poster-img"
+            loading="lazy" />
+          <span class="poster-badge">NOVO</span>
+          <div class="poster-info">
+            <p class="poster-genre">Terror • Suspense</p>
+            <p class="poster-title">Pecadores</p>
+          </div>
+        </div>
+        <!-- Missao Impossivel -->
+        <div class="poster-card">
+          <img src="https://image.tmdb.org/t/p/w500/NNxYkU70HPurnNCSiCjYAmacwm.jpg" alt="Missão Impossível"
+            class="poster-img" loading="lazy" />
+          <span class="poster-badge top10">4K</span>
+          <div class="poster-info">
+            <p class="poster-genre">Ação • Espionagem</p>
+            <p class="poster-title">Missão Impossível</p>
+          </div>
+        </div>
+        <!-- Thunderbolts -->
+        <div class="poster-card">
+          <img src="https://image.tmdb.org/t/p/w500/m9EtP1Yrzv6v7dMaC9mRaGhd1um.jpg" alt="Thunderbolts"
+            class="poster-img" loading="lazy" />
+          <span class="poster-badge">NOVO</span>
+          <div class="poster-info">
+            <p class="poster-genre">Super-Heróis • Ação</p>
+            <p class="poster-title">Thunderbolts*</p>
+          </div>
+        </div>
+        <!-- Minecraft -->
+        <div class="poster-card">
+          <img src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" alt="Minecraft" class="poster-img"
+            loading="lazy" />
+          <span class="poster-badge">FAMÍLIA</span>
+          <div class="poster-info">
+            <p class="poster-genre">Aventura • Game</p>
+            <p class="poster-title">Minecraft: O Filme</p>
+          </div>
+        </div>
+        <!-- Wicked -->
+        <div class="poster-card">
+          <img src="https://image.tmdb.org/t/p/w500/c5Tqxeo1UpBvnAc3csUm7j3hlQl.jpg" alt="Wicked" class="poster-img"
+            loading="lazy" />
+          <span class="poster-badge top10">TOP 10</span>
+          <div class="poster-info">
+            <p class="poster-genre">Musical • Fantasia</p>
+            <p class="poster-title">Wicked</p>
+          </div>
+        </div>
 
-      <div class="marquee-container">
-        <div class="marquee-track reverse">
-          <!-- The Last of Us -->
-          <div class="poster-card">
-            <img src="https://image.tmdb.org/t/p/w500/dmo6TYuuJgaYinXBPjrgG9mB5od.jpg" alt="The Last of Us"
-              class="poster-img" loading="lazy" />
-            <span class="poster-badge top10">TOP 10</span>
-            <div class="poster-info">
-              <p class="poster-genre">Drama • Sobrevivência</p>
-              <p class="poster-title">The Last of Us</p>
-            </div>
+        <!-- DUPLICATA PARA LOOP CONTÍNUO PERFEITO -->
+        <div class="poster-card">
+          <img src="https://image.tmdb.org/t/p/w500/ombsmhYUqR4qqOLOxAyr5V8hbyv.jpg" alt="Superman" class="poster-img"
+            loading="lazy" />
+          <span class="poster-badge">NOVO</span>
+          <div class="poster-info">
+            <p class="poster-genre">Ação • Aventura</p>
+            <p class="poster-title">Superman</p>
           </div>
-          <!-- The Boys -->
-          <div class="poster-card">
-            <img src="https://image.tmdb.org/t/p/w500/mY7SeH4HFFxW1hiI6cWuwCRKptN.jpg" alt="The Boys" class="poster-img"
-              loading="lazy" />
-            <span class="poster-badge">4K</span>
-            <div class="poster-info">
-              <p class="poster-genre">Ação • Sátira</p>
-              <p class="poster-title">The Boys</p>
-            </div>
+        </div>
+        <div class="poster-card">
+          <img src="https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg" alt="Duna 2" class="poster-img"
+            loading="lazy" />
+          <span class="poster-badge top10">4K</span>
+          <div class="poster-info">
+            <p class="poster-genre">Ficção Científica</p>
+            <p class="poster-title">Duna: Parte 2</p>
           </div>
-          <!-- House of the Dragon -->
-          <div class="poster-card">
-            <img src="https://image.tmdb.org/t/p/w500/z2yahl2uefxDCl0nogcRBstwruJ.jpg" alt="House of the Dragon"
-              class="poster-img" loading="lazy" />
-            <span class="poster-badge top10">TOP 10</span>
-            <div class="poster-info">
-              <p class="poster-genre">Fantasia Épica</p>
-              <p class="poster-title">House of the Dragon</p>
-            </div>
+        </div>
+        <div class="poster-card">
+          <img src="https://image.tmdb.org/t/p/w500/1RgPyOhN4DRs225BGTlHJqCudII.jpg" alt="Jurassic World"
+            class="poster-img" loading="lazy" />
+          <span class="poster-badge">TOP 10</span>
+          <div class="poster-info">
+            <p class="poster-genre">Ação • Aventura</p>
+            <p class="poster-title">Jurassic World: Recomeço</p>
           </div>
-          <!-- Stranger Things -->
-          <div class="poster-card">
-            <img src="https://image.tmdb.org/t/p/w500/49WJfeN0moxb9IPfGn8AIqMGskD.jpg" alt="Stranger Things"
-              class="poster-img" loading="lazy" />
-            <span class="poster-badge">NOVO</span>
-            <div class="poster-info">
-              <p class="poster-genre">Mistério • Ficção</p>
-              <p class="poster-title">Stranger Things</p>
-            </div>
-          </div>
-          <!-- Round 6 -->
-          <div class="poster-card">
-            <img src="https://upload.wikimedia.org/wikipedia/en/7/7b/Squid_Game_season_1_poster.png" alt="Round 6"
-              class="poster-img" loading="lazy" />
-            <span class="poster-badge top10">TOP 10</span>
-            <div class="poster-info">
-              <p class="poster-genre">Suspense • Thriller</p>
-              <p class="poster-title">Round 6 (Squid Game)</p>
-            </div>
-          </div>
-          <!-- From -->
-          <div class="poster-card">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/en/thumb/f/fa/From_title_card.jpg/500px-From_title_card.jpg"
-              alt="Origem (From)" class="poster-img" loading="lazy" />
-            <span class="poster-badge">MISTÉRIO</span>
-            <div class="poster-info">
-              <p class="poster-genre">Terror Psicológico</p>
-              <p class="poster-title">Origem (From)</p>
-            </div>
-          </div>
-          <!-- Reacher -->
-          <div class="poster-card">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Reacher_series_title_card.png/500px-Reacher_series_title_card.png"
-              alt="Reacher" class="poster-img" loading="lazy" />
-            <span class="poster-badge">AÇÃO</span>
-            <div class="poster-info">
-              <p class="poster-genre">Investigação • Ação</p>
-              <p class="poster-title">Reacher</p>
-            </div>
-          </div>
-
-          <!-- DUPLICATA PARA O LOOP -->
-          <div class="poster-card">
-            <img src="https://image.tmdb.org/t/p/w500/dmo6TYuuJgaYinXBPjrgG9mB5od.jpg" alt="The Last of Us"
-              class="poster-img" loading="lazy" />
-            <span class="poster-badge top10">TOP 10</span>
-            <div class="poster-info">
-              <p class="poster-genre">Drama • Sobrevivência</p>
-              <p class="poster-title">The Last of Us</p>
-            </div>
-          </div>
-          <div class="poster-card">
-            <img src="https://image.tmdb.org/t/p/w500/mY7SeH4HFFxW1hiI6cWuwCRKptN.jpg" alt="The Boys" class="poster-img"
-              loading="lazy" />
-            <span class="poster-badge">4K</span>
-            <div class="poster-info">
-              <p class="poster-genre">Ação • Sátira</p>
-              <p class="poster-title">The Boys</p>
-            </div>
-          </div>
-          <div class="poster-card">
-            <img src="https://image.tmdb.org/t/p/w500/z2yahl2uefxDCl0nogcRBstwruJ.jpg" alt="House of the Dragon"
-              class="poster-img" loading="lazy" />
-            <span class="poster-badge top10">TOP 10</span>
-            <div class="poster-info">
-              <p class="poster-genre">Fantasia Épica</p>
-              <p class="poster-title">House of the Dragon</p>
-            </div>
+        </div>
+        <div class="poster-card">
+          <img src="https://image.tmdb.org/t/p/w500/fYtHxTxlhzD4QWfEbrC1rypysSD.jpg" alt="Pecadores" class="poster-img"
+            loading="lazy" />
+          <span class="poster-badge">NOVO</span>
+          <div class="poster-info">
+            <p class="poster-genre">Terror • Suspense</p>
+            <p class="poster-title">Pecadores</p>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Categoria 3: Esportes Ao Vivo (Times, Campeonatos e Lutas Reais) -->
-    <div class="category-block" id="esportes">
-      <div class="category-header">
-        <div class="category-bar"></div>
-        <h3 class="category-title">⚽ Esportes Ao Vivo • Times & Campeonatos Reais</h3>
-        <span class="category-count">100% dos Jogos Sem Delay</span>
-      </div>
+  <!-- Categoria 2: Séries Mais Vistas -->
+  <div class="category-block">
+    <div class="category-header">
+      <div class="category-bar"></div>
+      <h3 class="category-title">📺 Séries Viciantes</h3>
+      <span class="category-count">+8.000 Séries</span>
+    </div>
 
-      <div class="marquee-container">
-        <div class="marquee-track">
-          <!-- 1. UEFA Champions League: Haaland x Real Madrid -->
-          <div class="poster-card">
-            <img src="sports_champions_clash.jpg" alt="UEFA Champions League - City vs Real Madrid" class="poster-img"
-              loading="lazy" />
-            <span class="poster-badge top10">4K AO VIVO</span>
-            <div class="poster-info">
-              <p class="poster-genre">Champions League</p>
-              <p class="poster-title">City x Real Madrid</p>
-            </div>
+    <div class="marquee-container">
+      <div class="marquee-track reverse">
+        <!-- The Last of Us -->
+        <div class="poster-card">
+          <img src="https://image.tmdb.org/t/p/w500/dmo6TYuuJgaYinXBPjrgG9mB5od.jpg" alt="The Last of Us"
+            class="poster-img" loading="lazy" />
+          <span class="poster-badge top10">TOP 10</span>
+          <div class="poster-info">
+            <p class="poster-genre">Drama • Sobrevivência</p>
+            <p class="poster-title">The Last of Us</p>
           </div>
+        </div>
+        <!-- The Boys -->
+        <div class="poster-card">
+          <img src="https://image.tmdb.org/t/p/w500/mY7SeH4HFFxW1hiI6cWuwCRKptN.jpg" alt="The Boys" class="poster-img"
+            loading="lazy" />
+          <span class="poster-badge">4K</span>
+          <div class="poster-info">
+            <p class="poster-genre">Ação • Sátira</p>
+            <p class="poster-title">The Boys</p>
+          </div>
+        </div>
+        <!-- House of the Dragon -->
+        <div class="poster-card">
+          <img src="https://image.tmdb.org/t/p/w500/z2yahl2uefxDCl0nogcRBstwruJ.jpg" alt="House of the Dragon"
+            class="poster-img" loading="lazy" />
+          <span class="poster-badge top10">TOP 10</span>
+          <div class="poster-info">
+            <p class="poster-genre">Fantasia Épica</p>
+            <p class="poster-title">House of the Dragon</p>
+          </div>
+        </div>
+        <!-- Stranger Things -->
+        <div class="poster-card">
+          <img src="https://image.tmdb.org/t/p/w500/49WJfeN0moxb9IPfGn8AIqMGskD.jpg" alt="Stranger Things"
+            class="poster-img" loading="lazy" />
+          <span class="poster-badge">NOVO</span>
+          <div class="poster-info">
+            <p class="poster-genre">Mistério • Ficção</p>
+            <p class="poster-title">Stranger Things</p>
+          </div>
+        </div>
+        <!-- Round 6 -->
+        <div class="poster-card">
+          <img src="https://upload.wikimedia.org/wikipedia/en/7/7b/Squid_Game_season_1_poster.png" alt="Round 6"
+            class="poster-img" loading="lazy" />
+          <span class="poster-badge top10">TOP 10</span>
+          <div class="poster-info">
+            <p class="poster-genre">Suspense • Thriller</p>
+            <p class="poster-title">Round 6 (Squid Game)</p>
+          </div>
+        </div>
+        <!-- From -->
+        <div class="poster-card">
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/fa/From_title_card.jpg/500px-From_title_card.jpg"
+            alt="Origem (From)" class="poster-img" loading="lazy" />
+          <span class="poster-badge">MISTÉRIO</span>
+          <div class="poster-info">
+            <p class="poster-genre">Terror Psicológico</p>
+            <p class="poster-title">Origem (From)</p>
+          </div>
+        </div>
+        <!-- Reacher -->
+        <div class="poster-card">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Reacher_series_title_card.png/500px-Reacher_series_title_card.png"
+            alt="Reacher" class="poster-img" loading="lazy" />
+          <span class="poster-badge">AÇÃO</span>
+          <div class="poster-info">
+            <p class="poster-genre">Investigação • Ação</p>
+            <p class="poster-title">Reacher</p>
+          </div>
+        </div>
 
-          <!-- 2. Brasileirão Série A: Flamengo x Palmeiras no Maracanã -->
-          <div class="poster-card">
-            <img src="sports_brasileirao_derby.jpg" alt="Brasileirão Série A - Flamengo x Palmeiras" class="poster-img"
-              loading="lazy" />
-            <span class="poster-badge live">AO VIVO</span>
-            <div class="poster-info">
-              <p class="poster-genre">Brasileirão • Premiere</p>
-              <p class="poster-title">Flamengo x Palmeiras</p>
-            </div>
+        <!-- DUPLICATA PARA O LOOP -->
+        <div class="poster-card">
+          <img src="https://image.tmdb.org/t/p/w500/dmo6TYuuJgaYinXBPjrgG9mB5od.jpg" alt="The Last of Us"
+            class="poster-img" loading="lazy" />
+          <span class="poster-badge top10">TOP 10</span>
+          <div class="poster-info">
+            <p class="poster-genre">Drama • Sobrevivência</p>
+            <p class="poster-title">The Last of Us</p>
           </div>
-
-          <!-- 3. Copa Libertadores -->
-          <div class="poster-card">
-            <img src="libertadores.jpg" alt="Copa Libertadores da América" class="poster-img" loading="lazy" />
-            <span class="poster-badge live">GLÓRIA ETERNA</span>
-            <div class="poster-info">
-              <p class="poster-genre">América do Sul</p>
-              <p class="poster-title">Copa Libertadores</p>
-            </div>
+        </div>
+        <div class="poster-card">
+          <img src="https://image.tmdb.org/t/p/w500/mY7SeH4HFFxW1hiI6cWuwCRKptN.jpg" alt="The Boys" class="poster-img"
+            loading="lazy" />
+          <span class="poster-badge">4K</span>
+          <div class="poster-info">
+            <p class="poster-genre">Ação • Sátira</p>
+            <p class="poster-title">The Boys</p>
           </div>
-
-          <!-- 4. Premier League Inglesa -->
-          <div class="poster-card">
-            <img src="premier.jpg" alt="Premier League Inglesa" class="poster-img" loading="lazy" />
-            <span class="poster-badge">LIGA N°1</span>
-            <div class="poster-info">
-              <p class="poster-genre">Futebol Inglês</p>
-              <p class="poster-title">Premier League</p>
-            </div>
-          </div>
-
-          <!-- 5. UFC Combate com Cinturão -->
-          <div class="poster-card">
-            <img src="sports_ufc_fight.jpg" alt="UFC Combate - Disputa de Cinturão" class="poster-img" loading="lazy" />
-            <span class="poster-badge live">CINTURÃO</span>
-            <div class="poster-info">
-              <p class="poster-genre">MMA Profissional</p>
-              <p class="poster-title">UFC Combate 24h</p>
-            </div>
-          </div>
-
-          <!-- 6. NBA League Pass Slam Dunk -->
-          <div class="poster-card">
-            <img src="sports_nba_action.jpg" alt="NBA League Pass - Slam Dunk" class="poster-img" loading="lazy" />
-            <span class="poster-badge">SHOWTIME</span>
-            <div class="poster-info">
-              <p class="poster-genre">Basquete NBA</p>
-              <p class="poster-title">NBA League Pass</p>
-            </div>
-          </div>
-
-          <!-- 7. Fórmula 1 Oficial -->
-          <div class="poster-card">
-            <img src="formula 1.jpg" alt="Fórmula 1 Oficial" class="poster-img" loading="lazy" />
-            <span class="poster-badge">VELOCIDADE</span>
-            <div class="poster-info">
-              <p class="poster-genre">Todos os GPs</p>
-              <p class="poster-title">Fórmula 1 Oficial</p>
-            </div>
-          </div>
-
-          <!-- 8. La Liga Espanhola -->
-          <div class="poster-card">
-            <img src="laliga.webp" alt="La Liga Espanhola" class="poster-img" loading="lazy" />
-            <span class="poster-badge top10">ELITE</span>
-            <div class="poster-info">
-              <p class="poster-genre">Futebol Europeu</p>
-              <p class="poster-title">La Liga Espanhola</p>
-            </div>
-          </div>
-
-          <!-- DUPLICATAS PARA O LOOP INFINITO PERFEITO -->
-          <div class="poster-card">
-            <img src="sports_champions_clash.jpg" alt="UEFA Champions League" class="poster-img" loading="lazy" />
-            <span class="poster-badge top10">4K AO VIVO</span>
-            <div class="poster-info">
-              <p class="poster-genre">Champions League</p>
-              <p class="poster-title">City x Real Madrid</p>
-            </div>
-          </div>
-          <div class="poster-card">
-            <img src="sports_brasileirao_derby.jpg" alt="Brasileirão Série A" class="poster-img" loading="lazy" />
-            <span class="poster-badge live">AO VIVO</span>
-            <div class="poster-info">
-              <p class="poster-genre">Brasileirão • Premiere</p>
-              <p class="poster-title">Flamengo x Palmeiras</p>
-            </div>
-          </div>
-          <div class="poster-card">
-            <img src="sports_ufc_fight.jpg" alt="UFC Combate" class="poster-img" loading="lazy" />
-            <span class="poster-badge live">CINTURÃO</span>
-            <div class="poster-info">
-              <p class="poster-genre">MMA Profissional</p>
-              <p class="poster-title">UFC Combate 24h</p>
-            </div>
-          </div>
-          <div class="poster-card">
-            <img src="sports_nba_action.jpg" alt="NBA League Pass" class="poster-img" loading="lazy" />
-            <span class="poster-badge">SHOWTIME</span>
-            <div class="poster-info">
-              <p class="poster-genre">Basquete NBA</p>
-              <p class="poster-title">NBA League Pass</p>
-            </div>
+        </div>
+        <div class="poster-card">
+          <img src="https://image.tmdb.org/t/p/w500/z2yahl2uefxDCl0nogcRBstwruJ.jpg" alt="House of the Dragon"
+            class="poster-img" loading="lazy" />
+          <span class="poster-badge top10">TOP 10</span>
+          <div class="poster-info">
+            <p class="poster-genre">Fantasia Épica</p>
+            <p class="poster-title">House of the Dragon</p>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Categoria 4: Doramas e K-Dramas Coreanos -->
-    <div class="category-block">
-      <div class="category-header">
-        <div class="category-bar"></div>
-        <h3 class="category-title">🌸 Doramas & K-Dramas Asiáticos</h3>
-        <span class="category-count">Dublados e Legendados</span>
-      </div>
+  <!-- Categoria 3: Esportes Ao Vivo (Times, Campeonatos e Lutas Reais) -->
+  <div class="category-block" id="esportes">
+    <div class="category-header">
+      <div class="category-bar"></div>
+      <h3 class="category-title">⚽ Esportes Ao Vivo • Times & Campeonatos Reais</h3>
+      <span class="category-count">100% dos Jogos Sem Delay</span>
+    </div>
 
-      <div class="marquee-container">
-        <div class="marquee-track reverse">
-          <!-- Rainha das Lágrimas -->
-          <div class="poster-card">
-            <img src="https://upload.wikimedia.org/wikipedia/en/e/e2/Queen_of_Tears_poster.png"
-              alt="Rainha das Lágrimas" class="poster-img" loading="lazy" />
-            <span class="poster-badge top10">TOP 10</span>
-            <div class="poster-info">
-              <p class="poster-genre">Romance • Drama</p>
-              <p class="poster-title">Rainha das Lágrimas</p>
-            </div>
+    <div class="marquee-container">
+      <div class="marquee-track">
+        <!-- 1. UEFA Champions League: Haaland x Real Madrid -->
+        <div class="poster-card">
+          <img src="sports_champions_clash.jpg" alt="UEFA Champions League - City vs Real Madrid" class="poster-img"
+            loading="lazy" />
+          <span class="poster-badge top10">4K AO VIVO</span>
+          <div class="poster-info">
+            <p class="poster-genre">Champions League</p>
+            <p class="poster-title">City x Real Madrid</p>
           </div>
-          <!-- Pousando no Amor -->
-          <div class="poster-card">
-            <img src="https://upload.wikimedia.org/wikipedia/en/5/5e/Crash_Landing_on_You_poster.png"
-              alt="Pousando no Amor" class="poster-img" loading="lazy" />
-            <span class="poster-badge">CLÁSSICO</span>
-            <div class="poster-info">
-              <p class="poster-genre">Romance • Comédia</p>
-              <p class="poster-title">Pousando no Amor</p>
-            </div>
-          </div>
-          <!-- Vincenzo -->
-          <div class="poster-card">
-            <img src="https://upload.wikimedia.org/wikipedia/en/5/5b/Vincenzo_TV_series.jpg" alt="Vincenzo"
-              class="poster-img" loading="lazy" />
-            <span class="poster-badge top10">AÇÃO</span>
-            <div class="poster-info">
-              <p class="poster-genre">Crime • Suspense</p>
-              <p class="poster-title">Vincenzo</p>
-            </div>
-          </div>
-          <!-- Beleza Verdadeira -->
-          <div class="poster-card">
-            <img src="https://upload.wikimedia.org/wikipedia/en/7/76/True_Beauty_TV_series_poster.jpg"
-              alt="Beleza Verdadeira" class="poster-img" loading="lazy" />
-            <span class="poster-badge">SUCESSO</span>
-            <div class="poster-info">
-              <p class="poster-genre">Comédia Romântica</p>
-              <p class="poster-title">Beleza Verdadeira</p>
-            </div>
-          </div>
-          <!-- Pretendente Surpresa -->
-          <div class="poster-card">
-            <img src="https://upload.wikimedia.org/wikipedia/en/1/19/A_Business_Proposal.jpg" alt="Pretendente Surpresa"
-              class="poster-img" loading="lazy" />
-            <span class="poster-badge">POPULAR</span>
-            <div class="poster-info">
-              <p class="poster-genre">Comédia Romântica</p>
-              <p class="poster-title">Pretendente Surpresa</p>
-            </div>
-          </div>
-          <!-- Classe dos Herois Fracos -->
-          <div class="poster-card">
-            <img src="https://upload.wikimedia.org/wikipedia/en/3/3e/Weak_Hero_Class_1.jpeg"
-              alt="Classe dos Heróis Fracos" class="poster-img" loading="lazy" />
-            <span class="poster-badge">AÇÃO</span>
-            <div class="poster-info">
-              <p class="poster-genre">Drama Escolar • Lutas</p>
-              <p class="poster-title">Weak Hero Class 1</p>
-            </div>
-          </div>
+        </div>
 
-          <!-- DUPLICATA -->
-          <div class="poster-card">
-            <img src="https://upload.wikimedia.org/wikipedia/en/e/e2/Queen_of_Tears_poster.png"
-              alt="Rainha das Lágrimas" class="poster-img" loading="lazy" />
-            <span class="poster-badge top10">TOP 10</span>
-            <div class="poster-info">
-              <p class="poster-genre">Romance • Drama</p>
-              <p class="poster-title">Rainha das Lágrimas</p>
-            </div>
+        <!-- 2. Brasileirão Série A: Flamengo x Palmeiras no Maracanã -->
+        <div class="poster-card">
+          <img src="sports_brasileirao_derby.jpg" alt="Brasileirão Série A - Flamengo x Palmeiras" class="poster-img"
+            loading="lazy" />
+          <span class="poster-badge live">AO VIVO</span>
+          <div class="poster-info">
+            <p class="poster-genre">Brasileirão • Premiere</p>
+            <p class="poster-title">Flamengo x Palmeiras</p>
           </div>
-          <div class="poster-card">
-            <img src="https://upload.wikimedia.org/wikipedia/en/5/5e/Crash_Landing_on_You_poster.png"
-              alt="Pousando no Amor" class="poster-img" loading="lazy" />
-            <span class="poster-badge">CLÁSSICO</span>
-            <div class="poster-info">
-              <p class="poster-genre">Romance • Comédia</p>
-              <p class="poster-title">Pousando no Amor</p>
-            </div>
+        </div>
+
+        <!-- 3. Copa Libertadores -->
+        <div class="poster-card">
+          <img src="libertadores.jpg" alt="Copa Libertadores da América" class="poster-img" loading="lazy" />
+          <span class="poster-badge live">GLÓRIA ETERNA</span>
+          <div class="poster-info">
+            <p class="poster-genre">América do Sul</p>
+            <p class="poster-title">Copa Libertadores</p>
+          </div>
+        </div>
+
+        <!-- 4. Premier League Inglesa -->
+        <div class="poster-card">
+          <img src="premier.jpg" alt="Premier League Inglesa" class="poster-img" loading="lazy" />
+          <span class="poster-badge">LIGA N°1</span>
+          <div class="poster-info">
+            <p class="poster-genre">Futebol Inglês</p>
+            <p class="poster-title">Premier League</p>
+          </div>
+        </div>
+
+        <!-- 5. UFC Combate com Cinturão -->
+        <div class="poster-card">
+          <img src="sports_ufc_fight.jpg" alt="UFC Combate - Disputa de Cinturão" class="poster-img" loading="lazy" />
+          <span class="poster-badge live">CINTURÃO</span>
+          <div class="poster-info">
+            <p class="poster-genre">MMA Profissional</p>
+            <p class="poster-title">UFC Combate 24h</p>
+          </div>
+        </div>
+
+        <!-- 6. NBA League Pass Slam Dunk -->
+        <div class="poster-card">
+          <img src="sports_nba_action.jpg" alt="NBA League Pass - Slam Dunk" class="poster-img" loading="lazy" />
+          <span class="poster-badge">SHOWTIME</span>
+          <div class="poster-info">
+            <p class="poster-genre">Basquete NBA</p>
+            <p class="poster-title">NBA League Pass</p>
+          </div>
+        </div>
+
+        <!-- 7. Fórmula 1 Oficial -->
+        <div class="poster-card">
+          <img src="formula 1.jpg" alt="Fórmula 1 Oficial" class="poster-img" loading="lazy" />
+          <span class="poster-badge">VELOCIDADE</span>
+          <div class="poster-info">
+            <p class="poster-genre">Todos os GPs</p>
+            <p class="poster-title">Fórmula 1 Oficial</p>
+          </div>
+        </div>
+
+        <!-- 8. La Liga Espanhola -->
+        <div class="poster-card">
+          <img src="laliga.webp" alt="La Liga Espanhola" class="poster-img" loading="lazy" />
+          <span class="poster-badge top10">ELITE</span>
+          <div class="poster-info">
+            <p class="poster-genre">Futebol Europeu</p>
+            <p class="poster-title">La Liga Espanhola</p>
+          </div>
+        </div>
+
+        <!-- DUPLICATAS PARA O LOOP INFINITO PERFEITO -->
+        <div class="poster-card">
+          <img src="sports_champions_clash.jpg" alt="UEFA Champions League" class="poster-img" loading="lazy" />
+          <span class="poster-badge top10">4K AO VIVO</span>
+          <div class="poster-info">
+            <p class="poster-genre">Champions League</p>
+            <p class="poster-title">City x Real Madrid</p>
+          </div>
+        </div>
+        <div class="poster-card">
+          <img src="sports_brasileirao_derby.jpg" alt="Brasileirão Série A" class="poster-img" loading="lazy" />
+          <span class="poster-badge live">AO VIVO</span>
+          <div class="poster-info">
+            <p class="poster-genre">Brasileirão • Premiere</p>
+            <p class="poster-title">Flamengo x Palmeiras</p>
+          </div>
+        </div>
+        <div class="poster-card">
+          <img src="sports_ufc_fight.jpg" alt="UFC Combate" class="poster-img" loading="lazy" />
+          <span class="poster-badge live">CINTURÃO</span>
+          <div class="poster-info">
+            <p class="poster-genre">MMA Profissional</p>
+            <p class="poster-title">UFC Combate 24h</p>
+          </div>
+        </div>
+        <div class="poster-card">
+          <img src="sports_nba_action.jpg" alt="NBA League Pass" class="poster-img" loading="lazy" />
+          <span class="poster-badge">SHOWTIME</span>
+          <div class="poster-info">
+            <p class="poster-genre">Basquete NBA</p>
+            <p class="poster-title">NBA League Pass</p>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Categoria 5: Animes -->
-    <div class="category-block">
-      <div class="category-header">
-        <div class="category-bar"></div>
-        <h3 class="category-title">⚔️ Animes & Shonen</h3>
-        <span class="category-count">Atualizações Diárias</span>
-      </div>
+  <!-- Categoria 4: Doramas e K-Dramas Coreanos -->
+  <div class="category-block">
+    <div class="category-header">
+      <div class="category-bar"></div>
+      <h3 class="category-title">🌸 Doramas & K-Dramas Asiáticos</h3>
+      <span class="category-count">Dublados e Legendados</span>
+    </div>
 
-      <div class="marquee-container">
-        <div class="marquee-track">
-          <!-- Solo Leveling -->
-          <div class="poster-card">
-            <img src="https://image.tmdb.org/t/p/w500/geCRueV3ElhRTr0xtJuEWJt6dJ1.jpg" alt="Solo Leveling"
-              class="poster-img" loading="lazy" />
-            <span class="poster-badge top10">TOP 1</span>
-            <div class="poster-info">
-              <p class="poster-genre">Ação • Fantasia</p>
-              <p class="poster-title">Solo Leveling</p>
-            </div>
+    <div class="marquee-container">
+      <div class="marquee-track reverse">
+        <!-- Rainha das Lágrimas -->
+        <div class="poster-card">
+          <img src="https://upload.wikimedia.org/wikipedia/en/e/e2/Queen_of_Tears_poster.png" alt="Rainha das Lágrimas"
+            class="poster-img" loading="lazy" />
+          <span class="poster-badge top10">TOP 10</span>
+          <div class="poster-info">
+            <p class="poster-genre">Romance • Drama</p>
+            <p class="poster-title">Rainha das Lágrimas</p>
           </div>
-          <!-- Demon Slayer -->
-          <div class="poster-card">
-            <img src="https://image.tmdb.org/t/p/w500/xUfRZu2mi8jH6SzQEJGP6tjBuYj.jpg" alt="Demon Slayer"
-              class="poster-img" loading="lazy" />
-            <span class="poster-badge">4K</span>
-            <div class="poster-info">
-              <p class="poster-genre">Ação • Sobrenatural</p>
-              <p class="poster-title">Demon Slayer</p>
-            </div>
+        </div>
+        <!-- Pousando no Amor -->
+        <div class="poster-card">
+          <img src="https://upload.wikimedia.org/wikipedia/en/5/5e/Crash_Landing_on_You_poster.png"
+            alt="Pousando no Amor" class="poster-img" loading="lazy" />
+          <span class="poster-badge">CLÁSSICO</span>
+          <div class="poster-info">
+            <p class="poster-genre">Romance • Comédia</p>
+            <p class="poster-title">Pousando no Amor</p>
           </div>
-          <!-- One Piece -->
-          <div class="poster-card">
-            <img src="https://image.tmdb.org/t/p/w500/cMD9Ygz11zjJzAovURpO75Qg7rT.jpg" alt="One Piece"
-              class="poster-img" loading="lazy" />
-            <span class="poster-badge">ÉPICO</span>
-            <div class="poster-info">
-              <p class="poster-genre">Aventura • Piratas</p>
-              <p class="poster-title">One Piece (Todos Ep)</p>
-            </div>
+        </div>
+        <!-- Vincenzo -->
+        <div class="poster-card">
+          <img src="https://upload.wikimedia.org/wikipedia/en/5/5b/Vincenzo_TV_series.jpg" alt="Vincenzo"
+            class="poster-img" loading="lazy" />
+          <span class="poster-badge top10">AÇÃO</span>
+          <div class="poster-info">
+            <p class="poster-genre">Crime • Suspense</p>
+            <p class="poster-title">Vincenzo</p>
           </div>
-          <!-- Jujutsu Kaisen -->
-          <div class="poster-card">
-            <img src="https://image.tmdb.org/t/p/w500/fHpKWq9ayzSk8nSwqRuaAUemRKh.jpg" alt="Jujutsu Kaisen"
-              class="poster-img" loading="lazy" />
-            <span class="poster-badge top10">POPULAR</span>
-            <div class="poster-info">
-              <p class="poster-genre">Ação • Maldições</p>
-              <p class="poster-title">Jujutsu Kaisen</p>
-            </div>
+        </div>
+        <!-- Beleza Verdadeira -->
+        <div class="poster-card">
+          <img src="https://upload.wikimedia.org/wikipedia/en/7/76/True_Beauty_TV_series_poster.jpg"
+            alt="Beleza Verdadeira" class="poster-img" loading="lazy" />
+          <span class="poster-badge">SUCESSO</span>
+          <div class="poster-info">
+            <p class="poster-genre">Comédia Romântica</p>
+            <p class="poster-title">Beleza Verdadeira</p>
           </div>
-          <!-- Chainsaw Man -->
-          <div class="poster-card">
-            <img src="https://image.tmdb.org/t/p/w500/npdB6eFzizki0WaZ1OvKcJrWe97.jpg" alt="Chainsaw Man"
-              class="poster-img" loading="lazy" />
-            <span class="poster-badge">NOVO</span>
-            <div class="poster-info">
-              <p class="poster-genre">Terror • Ação</p>
-              <p class="poster-title">Chainsaw Man</p>
-            </div>
+        </div>
+        <!-- Pretendente Surpresa -->
+        <div class="poster-card">
+          <img src="https://upload.wikimedia.org/wikipedia/en/1/19/A_Business_Proposal.jpg" alt="Pretendente Surpresa"
+            class="poster-img" loading="lazy" />
+          <span class="poster-badge">POPULAR</span>
+          <div class="poster-info">
+            <p class="poster-genre">Comédia Romântica</p>
+            <p class="poster-title">Pretendente Surpresa</p>
           </div>
-          <!-- Attack on Titan -->
-          <div class="poster-card">
-            <img src="https://image.tmdb.org/t/p/w500/6XjMwQTvnICBz6TguiDKkDVHvgS.jpg" alt="Attack on Titan"
-              class="poster-img" loading="lazy" />
-            <span class="poster-badge">COMPLETO</span>
-            <div class="poster-info">
-              <p class="poster-genre">Dark Fantasy</p>
-              <p class="poster-title">Attack on Titan</p>
-            </div>
+        </div>
+        <!-- Classe dos Herois Fracos -->
+        <div class="poster-card">
+          <img src="https://upload.wikimedia.org/wikipedia/en/3/3e/Weak_Hero_Class_1.jpeg"
+            alt="Classe dos Heróis Fracos" class="poster-img" loading="lazy" />
+          <span class="poster-badge">AÇÃO</span>
+          <div class="poster-info">
+            <p class="poster-genre">Drama Escolar • Lutas</p>
+            <p class="poster-title">Weak Hero Class 1</p>
           </div>
+        </div>
 
-          <!-- DUPLICATA -->
-          <div class="poster-card">
-            <img src="https://image.tmdb.org/t/p/w500/geCRueV3ElhRTr0xtJuEWJt6dJ1.jpg" alt="Solo Leveling"
-              class="poster-img" loading="lazy" />
-            <span class="poster-badge top10">TOP 1</span>
-            <div class="poster-info">
-              <p class="poster-genre">Ação • Fantasia</p>
-              <p class="poster-title">Solo Leveling</p>
-            </div>
+        <!-- DUPLICATA -->
+        <div class="poster-card">
+          <img src="https://upload.wikimedia.org/wikipedia/en/e/e2/Queen_of_Tears_poster.png" alt="Rainha das Lágrimas"
+            class="poster-img" loading="lazy" />
+          <span class="poster-badge top10">TOP 10</span>
+          <div class="poster-info">
+            <p class="poster-genre">Romance • Drama</p>
+            <p class="poster-title">Rainha das Lágrimas</p>
           </div>
-          <div class="poster-card">
-            <img src="https://image.tmdb.org/t/p/w500/xUfRZu2mi8jH6SzQEJGP6tjBuYj.jpg" alt="Demon Slayer"
-              class="poster-img" loading="lazy" />
-            <span class="poster-badge">4K</span>
-            <div class="poster-info">
-              <p class="poster-genre">Ação • Sobrenatural</p>
-              <p class="poster-title">Demon Slayer</p>
-            </div>
+        </div>
+        <div class="poster-card">
+          <img src="https://upload.wikimedia.org/wikipedia/en/5/5e/Crash_Landing_on_You_poster.png"
+            alt="Pousando no Amor" class="poster-img" loading="lazy" />
+          <span class="poster-badge">CLÁSSICO</span>
+          <div class="poster-info">
+            <p class="poster-genre">Romance • Comédia</p>
+            <p class="poster-title">Pousando no Amor</p>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Botão Centralizado para Ver Mais no WhatsApp -->
-    <div style="text-align: center; margin-top: 2rem;">
-      <a href="https://wa.me/5527998784485?text=Ol%C3%A1!%20Quero%20conhecer%20o%20cat%C3%A1logo%20completo%20da%20OnePlay%20e%20fazer%20meu%20teste%20gr%C3%A1tis."
-        target="_blank" rel="noopener noreferrer" class="btn-primary-whatsapp">
-        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-          <path
-            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.15-.174.199-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.82 9.82 0 016.988 2.898 9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-        </svg>
-        <span>Ver Todo o Catálogo & Testar Grátis</span>
-      </a>
+  <!-- Categoria 5: Animes -->
+  <div class="category-block">
+    <div class="category-header">
+      <div class="category-bar"></div>
+      <h3 class="category-title">⚔️ Animes & Shonen</h3>
+      <span class="category-count">Atualizações Diárias</span>
     </div>
+
+    <div class="marquee-container">
+      <div class="marquee-track">
+        <!-- Solo Leveling -->
+        <div class="poster-card">
+          <img src="https://image.tmdb.org/t/p/w500/geCRueV3ElhRTr0xtJuEWJt6dJ1.jpg" alt="Solo Leveling"
+            class="poster-img" loading="lazy" />
+          <span class="poster-badge top10">TOP 1</span>
+          <div class="poster-info">
+            <p class="poster-genre">Ação • Fantasia</p>
+            <p class="poster-title">Solo Leveling</p>
+          </div>
+        </div>
+        <!-- Demon Slayer -->
+        <div class="poster-card">
+          <img src="https://image.tmdb.org/t/p/w500/xUfRZu2mi8jH6SzQEJGP6tjBuYj.jpg" alt="Demon Slayer"
+            class="poster-img" loading="lazy" />
+          <span class="poster-badge">4K</span>
+          <div class="poster-info">
+            <p class="poster-genre">Ação • Sobrenatural</p>
+            <p class="poster-title">Demon Slayer</p>
+          </div>
+        </div>
+        <!-- One Piece -->
+        <div class="poster-card">
+          <img src="https://image.tmdb.org/t/p/w500/cMD9Ygz11zjJzAovURpO75Qg7rT.jpg" alt="One Piece" class="poster-img"
+            loading="lazy" />
+          <span class="poster-badge">ÉPICO</span>
+          <div class="poster-info">
+            <p class="poster-genre">Aventura • Piratas</p>
+            <p class="poster-title">One Piece (Todos Ep)</p>
+          </div>
+        </div>
+        <!-- Jujutsu Kaisen -->
+        <div class="poster-card">
+          <img src="https://image.tmdb.org/t/p/w500/fHpKWq9ayzSk8nSwqRuaAUemRKh.jpg" alt="Jujutsu Kaisen"
+            class="poster-img" loading="lazy" />
+          <span class="poster-badge top10">POPULAR</span>
+          <div class="poster-info">
+            <p class="poster-genre">Ação • Maldições</p>
+            <p class="poster-title">Jujutsu Kaisen</p>
+          </div>
+        </div>
+        <!-- Chainsaw Man -->
+        <div class="poster-card">
+          <img src="https://image.tmdb.org/t/p/w500/npdB6eFzizki0WaZ1OvKcJrWe97.jpg" alt="Chainsaw Man"
+            class="poster-img" loading="lazy" />
+          <span class="poster-badge">NOVO</span>
+          <div class="poster-info">
+            <p class="poster-genre">Terror • Ação</p>
+            <p class="poster-title">Chainsaw Man</p>
+          </div>
+        </div>
+        <!-- Attack on Titan -->
+        <div class="poster-card">
+          <img src="https://image.tmdb.org/t/p/w500/6XjMwQTvnICBz6TguiDKkDVHvgS.jpg" alt="Attack on Titan"
+            class="poster-img" loading="lazy" />
+          <span class="poster-badge">COMPLETO</span>
+          <div class="poster-info">
+            <p class="poster-genre">Dark Fantasy</p>
+            <p class="poster-title">Attack on Titan</p>
+          </div>
+        </div>
+
+        <!-- DUPLICATA -->
+        <div class="poster-card">
+          <img src="https://image.tmdb.org/t/p/w500/geCRueV3ElhRTr0xtJuEWJt6dJ1.jpg" alt="Solo Leveling"
+            class="poster-img" loading="lazy" />
+          <span class="poster-badge top10">TOP 1</span>
+          <div class="poster-info">
+            <p class="poster-genre">Ação • Fantasia</p>
+            <p class="poster-title">Solo Leveling</p>
+          </div>
+        </div>
+        <div class="poster-card">
+          <img src="https://image.tmdb.org/t/p/w500/xUfRZu2mi8jH6SzQEJGP6tjBuYj.jpg" alt="Demon Slayer"
+            class="poster-img" loading="lazy" />
+          <span class="poster-badge">4K</span>
+          <div class="poster-info">
+            <p class="poster-genre">Ação • Sobrenatural</p>
+            <p class="poster-title">Demon Slayer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botão Centralizado para Ver Mais no WhatsApp -->
+  <div style="text-align: center; margin-top: 2rem;">
+    <a href="https://wa.me/5527998784485?text=Ol%C3%A1!%20Quero%20conhecer%20o%20cat%C3%A1logo%20completo%20da%20OnePlay%20e%20fazer%20meu%20teste%20gr%C3%A1tis."
+      target="_blank" rel="noopener noreferrer" class="btn-primary-whatsapp">
+      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.15-.174.199-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.82 9.82 0 016.988 2.898 9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+      </svg>
+      <span>Ver Todo o Catálogo & Testar Grátis</span>
+    </a>
+  </div>
   </section>
 
   <!-- Simulador Interativo de Dispositivo (Gera Link Personalizado no WhatsApp) -->
@@ -960,7 +951,8 @@
         <span class="section-tag">ECONOMIA REAL E COMPROVADA</span>
         <h2 class="section-title">QUANTO VOCÊ GASTA HOJE <span class="text-gradient">VS. NA ONEPLAY</span></h2>
         <p class="section-description">
-          Veja na ponta do lápis o peso de pagar 6 faturas separadas todo mês versus ter todo o entretenimento do mundo
+          Veja na ponta do lápis o peso de pagar 6 faturas separadas todo mês versus ter todo o entretenimento do
+          mundo
           unificado em um só lugar por uma fração do preço.
         </p>
       </div>
@@ -1115,7 +1107,8 @@
             <div class="total-label">Apenas na OnePlay</div>
             <div class="total-value-main green">R$ 35,00 <span style="font-size: 1rem; font-weight: 500; color: #fff;">/
                 mês</span></div>
-            <div class="total-annual-note">✅ Apenas <strong>R$ 420,00 por ano</strong> (Economia de mais de 87%!)</div>
+            <div class="total-annual-note">✅ Apenas <strong>R$ 420,00 por ano</strong> (Economia de mais de 87%!)
+            </div>
           </div>
         </div>
       </div>
@@ -1267,7 +1260,8 @@
             </path>
           </svg>
         </div>
-        <h3 class="guarantee-title">COMPROMISSO BLINDADO: <span class="text-magenta">SE O SERVIDOR CAIR, DEVOLVEMOS SEU
+        <h3 class="guarantee-title">COMPROMISSO BLINDADO: <span class="text-magenta">SE O SERVIDOR CAIR, DEVOLVEMOS
+            SEU
             DINHEIRO!</span></h3>
         <p class="guarantee-text">
           Nós temos total confiança na estabilidade e na qualidade da infraestrutura da OnePlay.
@@ -1291,9 +1285,17 @@
         </p>
       </div>
 
-      <div class="leads-card">
+      <div class="leads-card"> <!-- Mensagem de Sucesso -->
+        <div id="formSuccessMessage"
+          style="display: none; margin-top: 20px; padding: 16px; border-radius: 8px; background: rgba(0, 255, 136, 0.1); border: 1px solid #00ff88; color: #ffffff; text-align: center;">
+          <p style="margin: 0; font-weight: bold; font-size: 1.05rem; color: #00ff88;">✓ Solicitação enviada com
+            sucesso!</p>
+          <p style="margin: 6px 0 0 0; font-size: 0.9rem; color: #cccccc;">Obrigado pelo contato. Nossos consultores já
+            receberam seus dados e entrarão em contato em breve.</p>
+        </div>
         <!-- Formulário de Leads -->
-        <form class="leads-form" id="leadsForm" action="https://formsubmit.co/oneplay.equipe@gmail.com" method="POST" target="formTargetFrame">
+        <form class="leads-form" id="leadsForm" action="https://formsubmit.co/oneplay.equipe@gmail.com" method="POST"
+          target="formTargetFrame">
           <!-- Configurações do FormSubmit -->
           <input type="hidden" name="_subject" value="🔥 Novo Lead do Site OnePlay - Solicitação de Acesso VIP" />
           <input type="hidden" name="_captcha" value="false" />
@@ -1435,15 +1437,13 @@
             line-height: 1.6;
             font-weight: 500;
           ">
-            Nossa equipe já está analisando suas informações. Em instantes, entraremos em contato com você via WhatsApp ou e-mail. Fique atento!
+            Nossa equipe já está analisando suas informações. Em instantes, entraremos em contato com você via
+            WhatsApp
+            ou e-mail. Fique atento!
           </p>
 
           <!-- Botão WhatsApp de atalho -->
-          <a
-            id="btnLeadWhatsappBoost"
-            href="https://wa.me/5527998784485"
-            target="_blank"
-            rel="noopener noreferrer"
+          <a id="btnLeadWhatsappBoost" href="https://wa.me/5527998784485" target="_blank" rel="noopener noreferrer"
             style="
               display: inline-flex;
               align-items: center;
@@ -1458,10 +1458,10 @@
               border-radius: 50px;
               text-decoration: none;
               box-shadow: 0 6px 25px rgba(37, 211, 102, 0.45);
-            "
-          >
+            ">
             <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.15-.174.199-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.82 9.82 0 016.988 2.898 9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.15-.174.199-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.82 9.82 0 016.988 2.898 9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
             </svg>
             <span>Acelerar atendimento no WhatsApp</span>
           </a>
@@ -1489,7 +1489,8 @@
         <div class="step-card">
           <div class="step-number">02</div>
           <h3 class="step-title">Receba o Teste Grátis</h3>
-          <p class="step-desc">Nossa equipe envia imediatamente o seu acesso de teste para você testar tudo na prática.
+          <p class="step-desc">Nossa equipe envia imediatamente o seu acesso de teste para você testar tudo na
+            prática.
           </p>
         </div>
 
@@ -1553,7 +1554,8 @@
           </div>
           <div class="star-rating">★★★★★</div>
           <p class="testimonial-quote">"Chamei no WhatsApp e me atenderam com muita educação e paciência. Em 3 minutos
-            liberaram o teste e já coloquei no meu dorama favorito 'Rainha das Lágrimas'. O catálogo de doramas é o mais
+            liberaram o teste e já coloquei no meu dorama favorito 'Rainha das Lágrimas'. O catálogo de doramas é o
+            mais
             completo que já vi!"</p>
           <div class="testimonial-device">
             <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
@@ -1643,7 +1645,8 @@
             </div>
           </div>
           <div class="star-rating">★★★★★</div>
-          <p class="testimonial-quote">"O que mais me impressionou foi o suporte humanizado. Você fala com uma pessoa de
+          <p class="testimonial-quote">"O que mais me impressionou foi o suporte humanizado. Você fala com uma pessoa
+            de
             verdade pelo WhatsApp que te ajuda com toda a paciência a instalar o aplicativo. Ativação instantânea logo
             após o teste!"</p>
           <div class="testimonial-device">
@@ -1664,7 +1667,8 @@
       <div class="section-header">
         <span class="section-tag">TIRE TODAS AS SUAS DÚVIDAS</span>
         <h2 class="section-title">PERGUNTAS <span class="text-gradient">FREQUENTES</span></h2>
-        <p class="section-description">Tudo o que você precisa saber sobre o teste grátis, aparelhos compatíveis e nossa
+        <p class="section-description">Tudo o que você precisa saber sobre o teste grátis, aparelhos compatíveis e
+          nossa
           garantia.</p>
       </div>
 
@@ -1676,8 +1680,10 @@
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <p>O teste grátis é 100% gratuito e sem nenhum compromisso. Basta você clicar em qualquer botão do WhatsApp
-              deste site e informar qual aparelho irá utilizar (Smart TV, Celular, TV Box, etc.). Nossa equipe gera seus
+            <p>O teste grátis é 100% gratuito e sem nenhum compromisso. Basta você clicar em qualquer botão do
+              WhatsApp
+              deste site e informar qual aparelho irá utilizar (Smart TV, Celular, TV Box, etc.). Nossa equipe gera
+              seus
               dados de acesso na hora para você testar canais, filmes, séries, doramas e esportes ao vivo na sua casa.
             </p>
           </div>
@@ -1729,7 +1735,8 @@
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <p>A liberação é imediata! Assim que você conclui o teste grátis e realiza o pagamento (via Pix ou cartão),
+            <p>A liberação é imediata! Assim que você conclui o teste grátis e realiza o pagamento (via Pix ou
+              cartão),
               o acesso definitivo é ativado no mesmo instante pelo nosso suporte no WhatsApp.</p>
           </div>
         </div>
@@ -1804,10 +1811,9 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-logo">
-          <img src="logo-oficial-nova.jpg" alt="OnePlay Oficial" width="52" height="52" style="border-radius: 8px; object-fit: contain; mix-blend-mode: screen;" />
-          <h3 class="brand-font" style="font-size: 1.5rem; letter-spacing: 0.05em;">ONE<span
-              class="text-cyan">PLAY</span></h3>
-          <p class="footer-tagline">
+          <img src="logo-oficial-nova.jpg" alt="OnePlay Oficial" width="52" height="52"
+            style="border-radius: 8px; object-fit: contain; mix-blend-mode: screen; margin-bottom: 8px;" />
+          <p class="footer-tagline" style="margin-top: 0;">
             O melhor player e catálogo de canais ao vivo, filmes, séries, doramas e animes. Conecte sua diversão sem
             travar e pague apenas R$ 35,00 mensais.
           </p>
@@ -1820,7 +1826,7 @@
               <path
                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.15-.174.199-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.82 9.82 0 016.988 2.898 9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
             </svg>
-            <span>(27) 99878-4485</span>
+            <span>WhatsApp</span>
           </a>
 
           <a href="https://www.instagram.com/oneplay_oficial" target="_blank" rel="noopener noreferrer"
@@ -1875,7 +1881,8 @@
   </div>
 
   <!-- iframe oculto: captura resposta do FormSubmit sem redirecionar a página -->
-  <iframe name="formTargetFrame" id="formTargetFrame" style="display:none;" aria-hidden="true" title="Form Target"></iframe>
+  <iframe name="formTargetFrame" id="formTargetFrame" style="display:none;" aria-hidden="true"
+    title="Form Target"></iframe>
 
   <!-- Scripts -->
   <script src="script.js"></script>
